@@ -23,6 +23,7 @@ const blog = defineCollection({
     preco_m2_medio: z.number().optional(),
     idh: z.number().optional(),
     tags: z.array(z.string()).default([]),
+    fontes: z.array(z.string()).default([]),
   }),
 });
 

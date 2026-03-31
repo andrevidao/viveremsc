@@ -1,6 +1,8 @@
 ---
 import Base from './Base.astro';
 import AdSlot from '../components/AdSlot.astro';
+import PostAuthor from '../components/PostAuthor.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
 
 interface Props {
@@ -11,9 +13,11 @@ interface Props {
   heroImage?: string;
   cidade?: string;
   categoria: string;
+  slug: string;
+  fontes?: string[];
 }
 
-const { title, description, pubDate, updatedDate, heroImage, cidade, categoria } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, cidade, categoria, slug, fontes = [] } = Astro.props;
 
 const categoriaLabel: Record<string, string> = {
   'cidades-para-morar': 'Cidades para Morar',
@@ -32,7 +36,6 @@ const formattedDate = pubDate.toLocaleDateString('pt-BR', {
 
 <Base title={title} description={description} ogImage={heroImage}>
 
-  <!-- Hero with title inside -->
   {heroImage ? (
     <div class="relative min-h-[420px] md:min-h-[480px] flex items-end bg-gray-900">
       <img src={heroImage} alt={title} class="absolute inset-0 w-full h-full object-cover opacity-70" />
@@ -78,20 +81,27 @@ const formattedDate = pubDate.toLocaleDateString('pt-BR', {
   )}
 
   <article class="max-w-[720px] mx-auto px-6 pt-10">
+    <!-- Assinatura + fontes no início -->
+    <PostAuthor fontes={fontes} />
+
     <AdSlot slot="horizontal" class="mb-10" />
 
     <div class="article-prose">
       <slot />
     </div>
 
-    <AdSlot slot="horizontal" class="mt-12 mb-6" />
+    <!-- Assinatura no fim -->
+    <PostAuthor fontes={fontes} />
+
+    <AdSlot slot="horizontal" class="mt-8 mb-6" />
+
+    <!-- Posts relacionados -->
+    <RelatedPosts currentSlug={slug} categoria={categoria} />
   </article>
 
-  <div class="mt-16">
-    <NewsletterForm
-      title="Gostou desta análise?"
-      description="Receba guias exclusivos sobre morar e investir em Santa Catarina. Direto no seu e-mail, sem spam."
-    />
-  </div>
+  <NewsletterForm
+    title="Gostou desta análise?"
+    description="Receba guias exclusivos sobre morar e investir em Santa Catarina. Direto no seu e-mail, sem spam."
+  />
 
 </Base>
