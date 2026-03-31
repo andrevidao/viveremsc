@@ -15,132 +15,141 @@ import DataGrid from '../../components/DataGrid.astro';
 import BairroCard from '../../components/BairroCard.astro';
 import InvestBox from '../../components/InvestBox.astro';
 import InlineCTA from '../../components/InlineCTA.astro';
+import CostTable from '../../components/CostTable.astro';
 import FAQ from '../../components/FAQ.astro';
 import AdSlot from '../../components/AdSlot.astro';
 
-Balneário Camboriú tem o **metro quadrado mais caro do Brasil** — R$ 15.072/m² segundo o FipeZap (fev/2026). Não é acidente. A cidade combina segurança, infraestrutura de alto padrão e uma demanda que não para de crescer.
+Balneário Camboriú tem o **metro quadrado mais caro do Brasil** — R$ 15.072/m² segundo o índice FipeZap de fevereiro de 2026. Não é acidente: a cidade combina segurança, infraestrutura de alto padrão e uma demanda que não para de crescer.
 
-Se você está avaliando a mudança ou quer investir, este guia traz **dados reais de mercado** para embasar sua decisão.
+Este guia traz **dados reais de mercado** — com fontes verificadas — para quem está avaliando a mudança ou o investimento.
 
 <DataGrid items={[
-  { label: "Preço do m²", value: "R$ 15.072", detail: "1º lugar no Brasil" },
-  { label: "IDH", value: "0,845", detail: "Top 5 nacional" },
+  { label: "Preço do m²", value: "R$ 15.072", detail: "1º lugar no Brasil — FipeZap" },
+  { label: "IDH", value: "0,845", detail: "Top 5 nacional — IBGE" },
   { label: "População", value: "156 mil", detail: "Crescimento acelerado" },
   { label: "Custo mensal", value: "R$ 9.350", detail: "Casal + 1 filho" },
 ]} />
 
+---
+
 ## Por que Balneário Camboriú atrai investidores?
 
-- **Valorização imobiliária consistente**: o m² subiu mais de 120% nos últimos 5 anos segundo o FipeZap
-- **Demanda de aluguel por temporada**: ocupação acima de 85% no verão, com diárias de R$ 500 a R$ 2.000
-- **Infraestrutura completa**: shoppings, hospitais privados, escolas bilíngues, gastronomia de alto nível
-- **IDH de 0,845**: um dos mais elevados do país — saúde, educação e renda acima da média
-- **Segurança**: índices de criminalidade muito abaixo da média nacional
+- **Valorização imobiliária de +120% em 5 anos** — dado do índice FipeZap, que monitora o mercado desde 2012
+- **Demanda de aluguel por temporada** — ocupação acima de 85% no verão, com diárias entre R$ 500 e R$ 2.000
+- **Infraestrutura completa** — shoppings (Balneário Camboriú Shopping, Atlântico), hospitais privados, escolas bilíngues, gastronomia de alto nível
+- **IDH de 0,845** — um dos mais elevados do país, refletindo saúde, educação e renda
+- **Segurança** — índices de criminalidade muito abaixo da média de capitais como SP e RJ
 
-<InlineCTA titulo="Análise completa" descricao="Baixe o guia gratuito com as 10 melhores cidades de SC para investir em 2026." botao="Baixar guia gratuito" />
+<InlineCTA titulo="Análise completa" descricao="Receba o guia gratuito com as 10 melhores cidades de SC para investir em 2026 — com dados de mercado exclusivos." botao="Baixar guia gratuito" />
 
-## Custo de vida real: quanto custa morar em BC?
+---
 
-Dados de fontes verificadas (FipeZap+, Numbeo, MySide, Unimed/ANS — 2025-2026):
+## Custo de vida real em Balneário Camboriú
 
-| Item | Valor médio mensal | Faixa |
-|---|---|---|
-| Aluguel 2 quartos (centro) | **R$ 4.500** | R$ 3.800 – R$ 7.000 |
-| Aluguel 3 quartos (centro) | **R$ 6.500** | R$ 5.100 – R$ 11.000 |
-| Condomínio (alto padrão) | **R$ 1.500** | R$ 800 – R$ 3.000+ |
-| Supermercado (casal) | **R$ 1.200** | R$ 1.000 – R$ 2.000 |
-| Escola particular | **R$ 1.500** | R$ 800 – R$ 2.500 |
-| Plano de saúde (individual) | **R$ 650** | R$ 300 – R$ 1.500 |
+<CostTable
+  cidade="Balneário Camboriú"
+  items={[
+    { item: "Aluguel 2 quartos (centro)", valor: "R$ 4.500", faixa: "R$ 3.800 – R$ 7.000" },
+    { item: "Aluguel 3 quartos (centro)", valor: "R$ 6.500", faixa: "R$ 5.100 – R$ 11.000" },
+    { item: "Condomínio (alto padrão)", valor: "R$ 1.500", faixa: "R$ 800 – R$ 3.000+" },
+    { item: "Supermercado (casal)", valor: "R$ 1.200", faixa: "R$ 1.000 – R$ 2.000" },
+    { item: "Escola particular", valor: "R$ 1.500", faixa: "R$ 800 – R$ 2.500" },
+    { item: "Plano de saúde (individual)", valor: "R$ 650", faixa: "R$ 300 – R$ 1.500" },
+  ]}
+  total="R$ 9.350/mês"
+  totalDesc="Estimativa para casal + 1 filho"
+  fonte="Fontes: FipeZap+ (fev/2026), Numbeo (jan/2026), MySide (fev/2026), Manica Marin, tabela Unimed/ANS 2026."
+/>
 
-**Estimativa para casal + 1 filho** (aluguel 2q + condomínio + mercado + escola + 2x saúde): **R$ 9.350/mês**.
+Imóveis frente mar na Avenida Atlântica ultrapassam **R$ 15.000/mês** de aluguel. Torres de super luxo como o Yachthouse têm condomínios acima de R$ 3.000.
 
-Imóveis frente mar na Avenida Atlântica ultrapassam R$ 15.000/mês de aluguel. Torres de super luxo têm condomínios acima de R$ 3.000.
-
-*Fontes: FipeZap+, Numbeo (jan/2026), MySide (fev/2026), Manica Marin, Unimed/ANS.*
-
-<AdSlot slot="in-article" />
+---
 
 ## Melhores bairros para morar
 
 <BairroCard
   nome="Barra Sul"
   tipo="Exclusivo"
-  precoM2="R$ 20.000 – R$ 35.000"
+  precoM2="R$ 20.000 – R$ 35.000/m²"
   destaque="Ideal para quem busca exclusividade absoluta e vista mar permanente."
-  descricao="Concentra os arranha-céus mais altos do Brasil e as unidades de maior ticket. Prédios como o One Tower e Yachthouse definem o skyline. Infraestrutura premium a poucos passos."
+  descricao="Concentra os arranha-céus mais altos do Brasil — One Tower, Yachthouse. Infraestrutura premium a poucos passos. Prédios com heliponto, marina privativa e serviços de concierge."
 />
 
 <BairroCard
   nome="Centro"
   tipo="Melhor custo-benefício"
-  precoM2="R$ 12.000 – R$ 18.000"
-  destaque="Melhor relação custo-benefício para quem quer morar bem sem pagar o premium da Barra Sul."
-  descricao="Tudo a pé: restaurantes, farmácias, Avenida Atlântica. Alta liquidez para aluguel, tanto anual quanto por temporada. Maior variedade de imóveis disponíveis."
+  precoM2="R$ 12.000 – R$ 18.000/m²"
+  destaque="Maior variedade de imóveis e alta liquidez para aluguel anual ou por temporada."
+  descricao="Tudo a pé: Avenida Atlântica, restaurantes, farmácias. A região com mais opções de imóveis disponíveis e melhor relação entre preço e localização."
 />
 
 <BairroCard
   nome="Pioneiros"
   tipo="Residencial"
-  precoM2="R$ 10.000 – R$ 15.000"
+  precoM2="R$ 10.000 – R$ 15.000/m²"
   destaque="Escolha ideal para famílias com filhos que priorizam tranquilidade."
-  descricao="Bairro mais silencioso e residencial. Proximidade com escolas e supermercados. Ritmo mais calmo sem abrir mão da localização central."
+  descricao="Bairro mais silencioso de BC. Proximidade com escolas (Anglo, Salesiano) e supermercados. Ritmo tranquilo sem perder a localização central."
 />
 
 <BairroCard
   nome="Praia Brava"
   tipo="Valorização"
-  precoM2="R$ 11.000 – R$ 16.000"
+  precoM2="R$ 11.000 – R$ 16.000/m²"
   destaque="Maior potencial de valorização nos próximos 5 anos."
-  descricao="Atrai perfil mais jovem e empreendedor. Surf, natureza e novos empreendimentos de alto padrão. Região em franca expansão com investimentos em infraestrutura."
+  descricao="Surf, natureza e novos empreendimentos de alto padrão. Atrai perfil jovem e empreendedor. Região em expansão com investimentos pesados em infraestrutura."
 />
 
-<InlineCTA descricao="Compare o custo de vida de BC com outras cidades de SC usando nossa calculadora interativa." botao="Abrir calculadora" href="/#calculadora" />
+<AdSlot slot="in-article" />
+
+<InlineCTA descricao="Compare o custo de vida de BC com Floripa, Joinville e Itapema na nossa calculadora interativa." botao="Abrir calculadora" href="/#calculadora" />
+
+---
 
 ## Dados de investimento imobiliário
 
 <InvestBox
-  titulo="Retorno do investimento em BC"
+  titulo="Retorno do investimento em Balneário Camboriú"
   items={[
-    { label: "Preço médio do m²", value: "R$ 15.072" },
-    { label: "Posição FipeZap Brasil", value: "1º lugar" },
+    { label: "Preço médio do m² (venda)", value: "R$ 15.072" },
+    { label: "Posição no ranking FipeZap", value: "1º do Brasil" },
     { label: "Rentabilidade aluguel anual", value: "5% a 7% a.a." },
-    { label: "Aluguel temporada (verão)", value: "R$ 500 – R$ 2.000/dia" },
-    { label: "Valorização últimos 5 anos", value: "+120%" },
-    { label: "Tendência", value: "Alta (terrenos escassos)" },
+    { label: "Diária temporada (verão)", value: "R$ 500 – R$ 2.000" },
+    { label: "Valorização acumulada 5 anos", value: "+120%" },
+    { label: "Tendência de preço", value: "Alta (escassez de terrenos)" },
   ]}
-  nota="Fontes: FipeZap+ fev/2026, portais imobiliários, Manica Marin. Rentabilidade varia conforme localização e padrão do imóvel."
+  nota="Fontes: FipeZap+ fev/2026, portais imobiliários (Zap, Viva Real, Imovelweb), Manica Marin. Rentabilidade varia conforme localização, padrão e gestão do imóvel."
 />
 
-A escassez de terrenos é o principal motor da valorização. BC é uma cidade geograficamente limitada entre o mar e as montanhas — **a oferta de novos terrenos é praticamente zero**. Isso significa pressão constante sobre os preços.
+A escassez de terrenos é o principal motor da valorização. BC é geograficamente limitada entre o mar e as montanhas — **a oferta de novos terrenos é praticamente zero**. Cada novo empreendimento disputa terrenos cada vez mais escassos, pressionando os preços para cima.
+
+---
 
 ## Para quem BC é ideal?
 
 - **Profissionais remotos** com renda acima de R$ 15.000/mês que querem qualidade de vida no litoral
-- **Investidores imobiliários** buscando valorização patrimonial + renda passiva com aluguel de temporada
-- **Famílias** que priorizam segurança, educação de qualidade e lazer
-- **Aposentados com patrimônio** que querem viver no litoral com infraestrutura completa
+- **Investidores imobiliários** buscando valorização patrimonial + renda passiva com temporada
+- **Famílias** que priorizam segurança, educação de qualidade e lazer completo
+- **Aposentados com patrimônio** que querem viver no litoral com infraestrutura completa de saúde
 
 ## Para quem BC não é ideal?
 
 Seja direto consigo: se o orçamento familiar mensal é inferior a **R$ 10.000**, Balneário Camboriú vai comprometer sua qualidade de vida. Alternativas com acesso fácil a BC:
 
-- **Camboriú** (cidade vizinha): custo 30-40% menor, 10 minutos de carro
-- **Itajaí**: infraestrutura portuária, preços mais acessíveis, 15 minutos de BC
-- **Itapema**: 2º m² mais caro do Brasil, mas com opções mais variadas de preço
+- **Camboriú** — cidade vizinha, custo 30-40% menor, 10 minutos de carro
+- **Itajaí** — infraestrutura portuária, preços mais acessíveis, 15 minutos
+- **Itapema** — 2º m² mais caro do Brasil (R$ 15.028/m²), mas com faixas de preço mais variadas
 
-<AdSlot slot="in-article" />
+---
 
 <FAQ perguntas={[
-  { q: "Qual o custo de vida em Balneário Camboriú em 2026?", a: "Para um casal com 1 filho, a estimativa é de R$ 9.350/mês incluindo aluguel de 2 quartos no centro, condomínio, supermercado, escola particular e plano de saúde. Dados de FipeZap+, Numbeo e MySide." },
-  { q: "Balneário Camboriú é segura?", a: "Sim. O IDH de 0,845 é um dos mais altos do Brasil. Os índices de criminalidade estão muito abaixo da média nacional, especialmente em comparação com capitais como São Paulo e Rio de Janeiro." },
-  { q: "Vale a pena investir em imóveis em BC?", a: "BC tem o m² mais caro do Brasil (R$ 15.072, FipeZap fev/2026) com valorização de +120% nos últimos 5 anos. A escassez de terrenos e demanda crescente indicam tendência de alta. Rentabilidade de aluguel anual entre 5% e 7%." },
-  { q: "Qual o melhor bairro para morar em Balneário Camboriú?", a: "Depende do perfil. Barra Sul para exclusividade, Centro para praticidade e custo-benefício, Pioneiros para famílias com filhos, Praia Brava para quem busca valorização futura." },
-  { q: "Como é o mercado de trabalho em Balneário Camboriú?", a: "A economia gira em torno de turismo, construção civil, serviços e gastronomia. Para profissionais remotos ou empresários, a cidade oferece infraestrutura completa com coworkings, internet de alta velocidade e qualidade de vida." },
-  { q: "Balneário Camboriú ou Florianópolis?", a: "BC oferece metro quadrado mais valorizado, segurança e infraestrutura concentrada. Floripa tem mais opções de praias, universidades e mercado de trabalho em tecnologia. Compare usando nossa calculadora de custo de vida." },
+  { q: "Qual o custo de vida em Balneário Camboriú em 2026?", a: "Para um casal com 1 filho, a estimativa é de R$ 9.350/mês incluindo aluguel de 2 quartos no centro (R$ 4.500), condomínio (R$ 1.500), supermercado (R$ 1.200), escola particular (R$ 1.500) e 2 planos de saúde (R$ 1.300). Dados de FipeZap+, Numbeo e MySide (2025-2026)." },
+  { q: "Balneário Camboriú é segura?", a: "Sim. O IDH de 0,845 é um dos mais altos do Brasil. Os índices de criminalidade estão muito abaixo da média de capitais como São Paulo e Rio de Janeiro." },
+  { q: "Vale a pena investir em imóveis em BC?", a: "BC tem o m² mais caro do Brasil (R$ 15.072 — FipeZap fev/2026) com valorização de +120% em 5 anos. A escassez de terrenos e demanda crescente indicam tendência de alta. Rentabilidade de aluguel anual entre 5% e 7%." },
+  { q: "Qual o melhor bairro para morar em Balneário Camboriú?", a: "Depende do perfil: Barra Sul para exclusividade (m² de R$ 20k a R$ 35k), Centro para custo-benefício (R$ 12k a R$ 18k), Pioneiros para famílias (R$ 10k a R$ 15k) e Praia Brava para valorização futura (R$ 11k a R$ 16k)." },
+  { q: "Como é o mercado de trabalho em BC?", a: "A economia gira em torno de turismo, construção civil, serviços e gastronomia. Para profissionais remotos, a cidade oferece coworkings, internet de alta velocidade e qualidade de vida. Não é uma cidade com grandes indústrias — o perfil é mais de prestação de serviços e investimento." },
+  { q: "Balneário Camboriú ou Florianópolis?", a: "BC: m² mais valorizado, segurança, infraestrutura concentrada, perfil de investimento. Floripa: mais praias (42), universidades (UFSC), mercado de tech. O custo de vida é similar (aluguel 2q: R$ 4.500 em BC vs R$ 4.200 em Floripa). Compare na nossa calculadora." },
 ]} />
 
-## Próximos passos
+---
 
-Se você está decidindo entre cidades, compare com nossos guias de [Florianópolis](/blog/morar-em-florianopolis) e [Joinville](/blog/morar-em-joinville).
-
-<InlineCTA titulo="Tome a melhor decisão" descricao="Receba a análise completa das 10 melhores cidades de SC com dados de mercado, custo de vida e potencial de investimento." botao="Quero o guia gratuito" />
+<InlineCTA titulo="Tome a decisão certa" descricao="Receba a análise completa das 10 melhores cidades de SC — com dados de mercado, custo de vida e potencial de investimento atualizados." botao="Quero o guia gratuito" />

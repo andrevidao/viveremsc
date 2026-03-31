@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --color-brand-50: #f4f9f8;
@@ -25,10 +26,123 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.prose h2 { margin-top: 3rem; margin-bottom: 1rem; font-weight: 700; letter-spacing: -0.02em; }
-.prose h3 { margin-top: 2rem; margin-bottom: 0.75rem; font-weight: 600; }
-.prose p { margin-bottom: 1.5rem; line-height: 1.8; }
-.prose table { font-size: 0.875rem; }
-.prose th { text-align: left; }
+/* Article prose — rich styling */
+.article-prose {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: #374151;
+}
+.article-prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+.article-prose h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.article-prose p {
+  margin-bottom: 1.5rem;
+}
+.article-prose strong {
+  color: #111827;
+  font-weight: 600;
+}
+.article-prose a {
+  color: #387d73;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #d1e7e3;
+}
+.article-prose a:hover {
+  color: #2f655e;
+  border-color: #387d73;
+}
+.article-prose ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1.5rem;
+}
+.article-prose ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.625rem;
+}
+.article-prose ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #4a9a8e;
+}
+.article-prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.article-prose ol li {
+  margin-bottom: 0.5rem;
+}
+.article-prose em {
+  color: #6b7280;
+  font-style: italic;
+}
+/* Tables */
+.article-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+.article-prose thead {
+  background-color: #f9fafb;
+}
+.article-prose th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #111827;
+  border-bottom: 2px solid #e5e7eb;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.article-prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  color: #374151;
+}
+.article-prose tbody tr:hover {
+  background-color: #f9fafb;
+}
+/* Blockquote */
+.article-prose blockquote {
+  border-left: 3px solid #4a9a8e;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  background-color: #f4f9f8;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #374151;
+  font-style: normal;
+}
+.article-prose hr {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 2.5rem 0;
+}
+
 img { transition: opacity 0.3s ease; }
 ::selection { background-color: #4a9a8e; color: white; }

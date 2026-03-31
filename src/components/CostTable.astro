@@ -1,0 +1,43 @@
+---
+interface Props {
+  cidade: string;
+  items: { item: string; valor: string; faixa: string }[];
+  total: string;
+  totalDesc: string;
+  fonte: string;
+}
+const { cidade, items, total, totalDesc, fonte } = Astro.props;
+---
+
+<div class="not-prose my-8">
+  <div class="border border-gray-200 rounded-xl overflow-hidden">
+    <div class="bg-brand-600 px-5 py-3">
+      <h4 class="text-[14px] font-semibold text-white">Custo de vida em {cidade} — valores mensais</h4>
+    </div>
+    <table class="w-full text-[14px]">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="text-left px-5 py-3 text-[12px] font-semibold text-gray-500 uppercase tracking-[0.05em]">Item</th>
+          <th class="text-right px-5 py-3 text-[12px] font-semibold text-gray-500 uppercase tracking-[0.05em]">Média</th>
+          <th class="text-right px-5 py-3 text-[12px] font-semibold text-gray-500 uppercase tracking-[0.05em] hidden sm:table-cell">Faixa</th>
+        </tr>
+      </thead>
+      <tbody>
+        {items.map(row => (
+          <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+            <td class="px-5 py-3 text-gray-700">{row.item}</td>
+            <td class="px-5 py-3 text-right font-semibold text-gray-900">{row.valor}</td>
+            <td class="px-5 py-3 text-right text-gray-400 hidden sm:table-cell">{row.faixa}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <div class="bg-brand-50 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-t border-brand-100">
+      <div>
+        <span class="text-[13px] text-gray-600">{totalDesc}</span>
+      </div>
+      <span class="text-[20px] font-bold text-brand-600">{total}</span>
+    </div>
+  </div>
+  <p class="text-[11px] text-gray-400 mt-2">{fonte}</p>
+</div>
