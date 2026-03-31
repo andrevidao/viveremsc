@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "titulo": "Custo de Vida em Cidades de Santa Catarina",
+    "periodo_dados": "2024-2026",
+    "ultima_atualizacao": "2026-03-31",
+    "moeda": "BRL (R$)",
+    "nota_geral": "Valores mensais em reais. Faixas indicam variacao conforme localizacao exata, padrao do imovel e perfil do consumidor. Valores de centro/regiao nobre referem-se a bairros mais valorizados de cada cidade.",
+    "fontes_principais": [
+      "Indice FipeZap+ (locacao e venda residencial)",
+      "Numbeo (cost of living database, atualizado dez/2025 - jan/2026)",
+      "MySide (guias de custo de vida por cidade, fev/2026)",
+      "Portais imobiliarios: Zap Imoveis, Viva Real, Imovelweb, DESC Imoveis",
+      "Melhor Escola / Quero Bolsa (mensalidades escolares)",
+      "NDMais / NSC Total (reportagens locais sobre custo de vida)",
+      "Serasa (custo de vida medio em SC)",
+      "DIEESE (cesta basica)",
+      "Lifebis / ANS (tabelas planos de saude Unimed 2026)"
+    ]
+  },
+  "cidades": {
+    "balneario_camboriu": {
+      "nome": "Balneario Camboriu",
+      "resumo": {
+        "custo_mensal_pessoa_solteira": "R$ 7.495",
+        "custo_mensal_familia_4_pessoas": "R$ 14.589",
+        "metro_quadrado_venda_medio": "R$ 15.072",
+        "posicao_ranking_fipezap": "1o lugar no Brasil (m2 mais caro do pais)",
+        "fonte": "MySide/FipeZap, fevereiro 2026"
+      },
+      "aluguel": {
+        "apartamento_2_quartos_centro": {
+          "valor_medio": "R$ 4.500",
+          "faixa": "R$ 3.800 a R$ 7.000",
+          "observacao": "Centro e proximidades da Av. Atlantica. Imoveis frente mar podem ultrapassar R$ 15.000",
+          "fonte": "Portais imobiliarios (Zap Imoveis, DESC Imoveis, Imovelweb) e MySide, 2025-2026"
+        },
+        "apartamento_3_quartos_centro": {
+          "valor_medio": "R$ 6.500",
+          "faixa": "R$ 5.100 a R$ 11.000",
+          "observacao": "Centro/regiao nobre. Imoveis na Av. Atlantica (frente mar) de R$ 11.000 a R$ 22.500+",
+          "fonte": "Imovelweb, Zap Imoveis, Oceanica Imoveis - anuncios ativos mar/2026"
+        },
+        "metro_quadrado_aluguel": {
+          "valor_medio": "Estimativa ~R$ 50-60/m2",
+          "fonte": "Estimativa baseada em anuncios e FipeZap (cidade nao monitorada individualmente no indice de locacao FipeZap)"
+        }
+      },
+      "condominio_alto_padrao": {
+        "valor_medio": "R$ 1.500",
+        "faixa": "R$ 800 a R$ 3.000+",
+        "observacao": "Predios com infraestrutura completa (piscina, academia, portaria 24h). Torres de super luxo podem ter condominios acima de R$ 3.000",
+        "fonte": "Manica Marin Guia 2025; portais imobiliarios"
+      },
+      "supermercado_mensal_casal": {
+        "valor_medio": "R$ 1.200",
+        "faixa": "R$ 1.000 a R$ 2.000",
+        "observacao": "Redes disponiveis: Angeloni, Fort Atacadista, Koch. Precos ligeiramente acima da media catarinense por ser cidade turistica",
+        "fonte": "Manica Marin Guia 2025; Serasa custo de vida SC"
+      },
+      "escola_particular_mensalidade": {
+        "valor_medio": "R$ 1.500",
+        "faixa": "R$ 800 a R$ 2.500",
+        "observacao": "Ensino fundamental/medio. Escolas de referencia: Colegio Salesiano, Anglo, Aster (bilingue), COC. Escola internacional: ~R$ 2.158/mes (R$ 25.900/ano segundo Numbeo)",
+        "fonte": "Melhor Escola; Numbeo (dez/2025); MySide"
+      },
+      "plano_saude_individual": {
+        "valor_medio": "R$ 650",
+        "faixa": "R$ 300 a R$ 1.500",
+        "observacao": "Plano Unimed enfermaria individual (29-33 anos): ~R$ 590/mes; (34-38 anos): ~R$ 670/mes. Planos apartamento e com coparticipacao alteram significativamente o valor. Reajuste ANS 2025-2026: 6,06%",
+        "fonte": "Lifebis tabela Unimed 2026; ANS; Manica Marin Guia 2025"
+      }
+    },
+    "florianopolis": {
+      "nome": "Florianopolis",
+      "resumo": {
+        "custo_mensal_pessoa_solteira": "R$ 8.272",
+        "custo_mensal_familia_4_pessoas": "R$ 16.652",
+        "metro_quadrado_venda_medio": "R$ 13.011",
+        "posicao_ranking_fipezap": "5o lugar no Brasil",
+        "metro_quadrado_aluguel": "R$ 59,76/m2",
+        "fonte": "MySide/FipeZap, fevereiro 2026"
+      },
+      "aluguel": {
+        "apartamento_2_quartos_centro": {
+          "valor_medio": "R$ 4.200",
+          "faixa": "R$ 3.500 a R$ 6.000",
+          "observacao": "Centro, Agronomica, Trindade, Joao Paulo, bairros nobres da ilha. Estimado com base no m2 de R$ 59,76 para ~70m2 (FipeZap) e anuncios. Numbeo indica 1 quarto centro a R$ 3.047",
+          "fonte": "FipeZap+ (indice locacao 2025); Numbeo jan/2026; MySide"
+        },
+        "apartamento_3_quartos_centro": {
+          "valor_medio": "R$ 5.938",
+          "faixa": "R$ 4.000 a R$ 8.000",
+          "observacao": "Numbeo: media R$ 5.937,50 para 3 quartos no centro. Areas como Jurere Internacional, Cacupe podem ter valores significativamente maiores",
+          "fonte": "Numbeo jan/2026; FipeZap+ (R$ 59,76/m2 para ~100m2 = R$ 5.976)"
+        },
+        "apartamento_85m2_mobiliado_area_nobre": {
+          "valor_medio": "R$ 6.548",
+          "fonte": "MySide, fevereiro 2026"
+        }
+      },
+      "condominio_alto_padrao": {
+        "valor_medio": "R$ 1.200",
+        "faixa": "R$ 728 a R$ 1.234",
+        "observacao": "Media geral da cidade: R$ 728/mes (Loft). Bairros com maior taxa: Agronomica (R$ 1.234), Cacupe (R$ 1.200), Joao Paulo (R$ 1.200). Alto padrao real pode chegar a R$ 1.500-2.000+",
+        "fonte": "NSC Total / Loft (pesquisa 2.000 anuncios); NDMais 2026"
+      },
+      "supermercado_mensal_casal": {
+        "valor_medio": "R$ 1.200",
+        "faixa": "R$ 1.000 a R$ 1.500",
+        "observacao": "Gasto medio domiciliar com supermercado: R$ 1.127,60. Cesta basica DIEESE Florianopolis: R$ 797,53. Para casal com alimentacao variada, estima-se R$ 1.200",
+        "fonte": "NDMais 2026; DIEESE cesta basica; Serasa custo de vida SC"
+      },
+      "escola_particular_mensalidade": {
+        "valor_medio": "R$ 1.600",
+        "faixa": "R$ 800 a R$ 2.800",
+        "observacao": "Media geral: R$ 1.067,50 (Melhor Escola). Escolas de alto padrao: R$ 1.500 a R$ 2.800. Escola internacional (Numbeo): R$ 55.612,50/ano (~R$ 4.634/mes)",
+        "fonte": "Melhor Escola 2025; Numbeo jan/2026"
+      },
+      "plano_saude_individual": {
+        "valor_medio": "R$ 650",
+        "faixa": "R$ 400 a R$ 1.200",
+        "observacao": "Plano Unimed enfermaria individual (29-33 anos): ~R$ 590/mes; (34-38 anos): ~R$ 670/mes. Consulta medica particular avulsa: R$ 362. Reajuste ANS 2025-2026: 6,06%",
+        "fonte": "Lifebis tabela Unimed 2026; MySide; ANS"
+      }
+    },
+    "joinville": {
+      "nome": "Joinville",
+      "resumo": {
+        "custo_mensal_pessoa_solteira": "R$ 5.077",
+        "custo_mensal_familia_4_pessoas": "R$ 11.760 (estimativa baseada em Numbeo)",
+        "metro_quadrado_aluguel": "R$ 37,11/m2",
+        "posicao_ranking_sc": "3a cidade mais cara de SC em aluguel (atras de Florianopolis e Sao Jose)",
+        "fonte": "MySide; FipeZap+ 2026; Numbeo"
+      },
+      "aluguel": {
+        "apartamento_2_quartos_centro": {
+          "valor_medio": "R$ 2.500",
+          "faixa": "R$ 2.014 a R$ 3.200",
+          "observacao": "Media FipeZap para 2 quartos: R$ 2.014. Centro e bairros nobres (Atiradores, America, Bucarein) tendem ao limite superior. m2 aluguel: R$ 37,11",
+          "fonte": "FipeZap+ 2026; Principe Imoveis; Numbeo jan/2026"
+        },
+        "apartamento_3_quartos_centro": {
+          "valor_medio": "R$ 3.875",
+          "faixa": "R$ 3.234 a R$ 4.500",
+          "observacao": "Numbeo: media R$ 3.875 para 3 quartos no centro. Media geral (Principe Imoveis): R$ 3.234",
+          "fonte": "Numbeo jan/2026; Principe Imoveis Joinville; FipeZap+"
+        },
+        "apartamento_85m2_area_nobre": {
+          "faixa": "R$ 1.937 a R$ 3.239",
+          "fonte": "MySide comparativo SC"
+        }
+      },
+      "condominio_alto_padrao": {
+        "valor_medio": "R$ 900",
+        "faixa": "R$ 500 a R$ 1.500",
+        "observacao": "Estimativa baseada na proporcao de precos Joinville/Florianopolis (~75%). Predios alto padrao nos bairros America, Atiradores",
+        "fonte": "Estimativa baseada em Numbeo e proporcao regional"
+      },
+      "supermercado_mensal_casal": {
+        "valor_medio": "R$ 1.000",
+        "faixa": "R$ 800 a R$ 1.200",
+        "observacao": "Gasto medio domiciliar com alimentos/bebidas em Joinville: R$ 965,71. Para casal estima-se ~R$ 1.000. Precos de alimentos geralmente inferiores a Florianopolis",
+        "fonte": "NDMais (despesas Joinville); Numbeo comparativo; Serasa SC"
+      },
+      "escola_particular_mensalidade": {
+        "valor_medio": "R$ 1.436",
+        "faixa": "R$ 528 a R$ 2.344",
+        "observacao": "Media da cidade: R$ 1.436. Escolas de referencia: Positivo, Bom Jesus, Univille. Escola internacional (Numbeo): R$ 33.100/ano (~R$ 2.758/mes)",
+        "fonte": "Melhor Escola 2025; Numbeo jan/2026"
+      },
+      "plano_saude_individual": {
+        "valor_medio": "R$ 600",
+        "faixa": "R$ 350 a R$ 1.100",
+        "observacao": "Valores similares a media estadual. Unimed enfermaria individual (29-33 anos): ~R$ 590/mes. Joinville possui boa rede de saude publica e privada",
+        "fonte": "Lifebis tabela Unimed 2026; estimativa baseada em ANS"
+      }
+    },
+    "itapema": {
+      "nome": "Itapema",
+      "resumo": {
+        "custo_mensal_medio": "R$ 7.150",
+        "metro_quadrado_venda_medio": "R$ 15.028",
+        "posicao_ranking_fipezap": "2o lugar no Brasil (m2 venda)",
+        "fonte": "MySide 2026; FipeZap dez/2025"
+      },
+      "aluguel": {
+        "apartamento_2_quartos_centro": {
+          "valor_medio": "R$ 3.000",
+          "faixa": "R$ 2.500 a R$ 4.500",
+          "observacao": "Meia Praia (regiao nobre): R$ 2.500 a R$ 4.500. Centro e Morretes: R$ 2.000 a R$ 3.500. Cidade turistica com variacao sazonal de precos",
+          "fonte": "MySide custo de vida Itapema 2026; portais imobiliarios"
+        },
+        "apartamento_3_quartos_centro": {
+          "valor_medio": "R$ 5.000",
+          "faixa": "R$ 3.500 a R$ 9.000",
+          "observacao": "Alto padrao em Meia Praia pode facilmente ultrapassar R$ 6.000-9.000. Faixa geral de medio/alto padrao indicada pela MySide: R$ 2.500 a R$ 9.000",
+          "fonte": "MySide custo de vida Itapema 2026; Zap Imoveis; Trovit"
+        }
+      },
+      "condominio_alto_padrao": {
+        "valor_medio": "R$ 1.300",
+        "faixa": "R$ 700 a R$ 2.500",
+        "observacao": "Itapema possui muitos predios novos de alto padrao (2o m2 mais caro do Brasil). Condominios de torres recentes em Meia Praia tendem a valores elevados",
+        "fonte": "Estimativa baseada em proporcao regional e anuncios em portais imobiliarios"
+      },
+      "supermercado_mensal_casal": {
+        "valor_medio": "R$ 1.100",
+        "faixa": "R$ 900 a R$ 1.400",
+        "observacao": "Cesta basica Itapema: R$ 512 (MySide). Para casal com compras completas, estima-se R$ 1.100. Precos podem subir na alta temporada (dez-fev)",
+        "fonte": "MySide custo de vida Itapema 2026; Serasa SC"
+      },
+      "escola_particular_mensalidade": {
+        "valor_medio": "R$ 1.300",
+        "faixa": "R$ 528 a R$ 2.000",
+        "observacao": "Media basica: R$ 648 (Melhor Escola). Ensino fundamental/medio de qualidade: R$ 1.300 a R$ 2.000. Educacao infantil: R$ 931 a R$ 1.232. Oferta de escolas menor que em Florianopolis/Joinville",
+        "fonte": "Melhor Escola 2025; MySide custo de vida Itapema 2026"
+      },
+      "plano_saude_individual": {
+        "valor_medio": "R$ 650",
+        "faixa": "R$ 350 a R$ 1.200",
+        "observacao": "Valores regionais similares a Balneario Camboriu. Unimed enfermaria individual (29-33 anos): ~R$ 590/mes. Rede hospitalar menor, muitos moradores utilizam servicos em Balneario Camboriu ou Itajai",
+        "fonte": "Lifebis tabela Unimed 2026; estimativa regional"
+      }
+    }
+  },
+  "tabela_comparativa_resumo": {
+    "nota": "Valores medios mensais (R$) para centro/regiao nobre",
+    "categorias": [
+      {
+        "item": "Aluguel 2 quartos (centro)",
+        "balneario_camboriu": 4500,
+        "florianopolis": 4200,
+        "joinville": 2500,
+        "itapema": 3000
+      },
+      {
+        "item": "Aluguel 3 quartos (centro)",
+        "balneario_camboriu": 6500,
+        "florianopolis": 5938,
+        "joinville": 3875,
+        "itapema": 5000
+      },
+      {
+        "item": "Condominio alto padrao",
+        "balneario_camboriu": 1500,
+        "florianopolis": 1200,
+        "joinville": 900,
+        "itapema": 1300
+      },
+      {
+        "item": "Supermercado mensal (casal)",
+        "balneario_camboriu": 1200,
+        "florianopolis": 1200,
+        "joinville": 1000,
+        "itapema": 1100
+      },
+      {
+        "item": "Escola particular (mensalidade)",
+        "balneario_camboriu": 1500,
+        "florianopolis": 1600,
+        "joinville": 1436,
+        "itapema": 1300
+      },
+      {
+        "item": "Plano de saude individual",
+        "balneario_camboriu": 650,
+        "florianopolis": 650,
+        "joinville": 600,
+        "itapema": 650
+      }
+    ],
+    "custo_total_estimado_casal_sem_filhos": {
+      "nota": "Soma de aluguel 2q + condominio + supermercado + 2x plano saude + utilidades (~R$ 500)",
+      "balneario_camboriu": "~R$ 9.000",
+      "florianopolis": "~R$ 8.400",
+      "joinville": "~R$ 6.150",
+      "itapema": "~R$ 7.500"
+    }
+  },
+  "observacoes_importantes": [
+    "Balneario Camboriu e Itapema possuem os metros quadrados mais caros do Brasil (1o e 2o lugar FipeZap dez/2025), o que impacta diretamente alugueis e condominios.",
+    "Florianopolis tem o 3o aluguel mais caro do Brasil (FipeZap locacao) com m2 de R$ 59,76.",
+    "Joinville e significativamente mais acessivel (~30-40% mais barata que Florianopolis em moradia).",
+    "Itapema tem oferta de servicos (escolas, saude) mais limitada que as demais, o que pode exigir deslocamento a cidades vizinhas.",
+    "Valores de condominio variam enormemente: predios antigos podem ter taxa de R$ 400-600, enquanto torres de super luxo ultrapassam R$ 3.000.",
+    "Planos de saude tem reajuste ANS de 6,06% (mai/2025 a abr/2026). Valores variam por idade, tipo de acomodacao e coparticipacao.",
+    "Precos de supermercado em cidades litoraneas turisticas (BC e Itapema) sofrem inflacao sazonal na alta temporada (dezembro a fevereiro).",
+    "O indice FipeZap monitora alugueis de Florianopolis e Joinville, mas nao de Balneario Camboriu e Itapema individualmente no indice de locacao."
+  ]
+}

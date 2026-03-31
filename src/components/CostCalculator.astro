@@ -1,9 +1,10 @@
 ---
+// Dados reais — Fontes: FipeZap+, Numbeo, MySide, Melhor Escola, Unimed/ANS (2025-2026)
 const cidades = [
-  { value: 'balneario-camboriu', label: 'Balneário Camboriú', aluguel2q: 5500, aluguel3q: 11000, condo: 2000, mercado: 2400, escola: 2800, saude: 1100 },
-  { value: 'florianopolis', label: 'Florianópolis', aluguel2q: 3800, aluguel3q: 7000, condo: 1200, mercado: 2200, escola: 2200, saude: 950 },
-  { value: 'joinville', label: 'Joinville', aluguel2q: 2500, aluguel3q: 4500, condo: 700, mercado: 1800, escola: 1600, saude: 800 },
-  { value: 'itapema', label: 'Itapema', aluguel2q: 3200, aluguel3q: 6000, condo: 1000, mercado: 2000, escola: 2000, saude: 900 },
+  { value: 'balneario-camboriu', label: 'Balneário Camboriú', aluguel2q: 4500, aluguel3q: 6500, condo: 1500, mercado: 1200, escola: 1500, saude: 650 },
+  { value: 'florianopolis', label: 'Florianópolis', aluguel2q: 4200, aluguel3q: 5938, condo: 1200, mercado: 1200, escola: 1600, saude: 650 },
+  { value: 'joinville', label: 'Joinville', aluguel2q: 2500, aluguel3q: 3875, condo: 900, mercado: 1000, escola: 1436, saude: 600 },
+  { value: 'itapema', label: 'Itapema', aluguel2q: 3000, aluguel3q: 5000, condo: 1300, mercado: 1100, escola: 1300, saude: 650 },
 ];
 ---
 
@@ -31,34 +32,35 @@ const cidades = [
         <div class="space-y-3 mb-6">
           <div class="flex justify-between text-[14px]">
             <span class="text-gray-500">Aluguel (2 quartos)</span>
-            <span id="calc-aluguel2q" class="font-semibold text-gray-900">R$ 5.500</span>
+            <span id="calc-aluguel2q" class="font-semibold text-gray-900">R$ 4.500</span>
           </div>
           <div class="flex justify-between text-[14px]">
             <span class="text-gray-500">Aluguel (3 quartos)</span>
-            <span id="calc-aluguel3q" class="font-semibold text-gray-900">R$ 11.000</span>
+            <span id="calc-aluguel3q" class="font-semibold text-gray-900">R$ 6.500</span>
           </div>
           <div class="flex justify-between text-[14px]">
             <span class="text-gray-500">Condomínio</span>
-            <span id="calc-condo" class="font-semibold text-gray-900">R$ 2.000</span>
+            <span id="calc-condo" class="font-semibold text-gray-900">R$ 1.500</span>
           </div>
           <div class="flex justify-between text-[14px]">
             <span class="text-gray-500">Supermercado (casal)</span>
-            <span id="calc-mercado" class="font-semibold text-gray-900">R$ 2.400</span>
+            <span id="calc-mercado" class="font-semibold text-gray-900">R$ 1.200</span>
           </div>
           <div class="flex justify-between text-[14px]">
             <span class="text-gray-500">Escola particular</span>
-            <span id="calc-escola" class="font-semibold text-gray-900">R$ 2.800</span>
+            <span id="calc-escola" class="font-semibold text-gray-900">R$ 1.500</span>
           </div>
           <div class="flex justify-between text-[14px]">
             <span class="text-gray-500">Plano de saúde</span>
-            <span id="calc-saude" class="font-semibold text-gray-900">R$ 1.100</span>
+            <span id="calc-saude" class="font-semibold text-gray-900">R$ 650</span>
           </div>
         </div>
 
         <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
           <span class="text-[14px] font-semibold text-gray-700">Estimativa mensal total</span>
-          <span id="calc-total" class="text-[22px] font-bold text-brand-600">R$ 24.800</span>
+          <span id="calc-total" class="text-[22px] font-bold text-brand-600">R$ 9.350</span>
         </div>
+        <p class="text-[11px] text-gray-400 mt-3">Fontes: FipeZap+, Numbeo, MySide, Melhor Escola, Unimed/ANS — dados 2025-2026. Valores médios para centro/região nobre.</p>
       </div>
     </div>
   </div>
