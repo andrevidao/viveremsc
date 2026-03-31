@@ -181,7 +181,11 @@
         "custo_mensal_medio": "R$ 7.150",
         "metro_quadrado_venda_medio": "R$ 15.028",
         "posicao_ranking_fipezap": "2o lugar no Brasil (m2 venda)",
-        "fonte": "MySide 2026; FipeZap dez/2025"
+        "populacao_estimada_2025": 86116,
+        "idh": 0.796,
+        "valorizacao_5_anos": "+114%",
+        "rentabilidade_anual_media": "22,1% a.a. (CRECI-SC, 2019-2024)",
+        "fonte": "MySide 2026; FipeZap fev/2026; IBGE; CRECI-SC"
       },
       "aluguel": {
         "apartamento_2_quartos_centro": {
