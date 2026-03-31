@@ -143,24 +143,22 @@ body {
   border-top: 1px solid #e5e7eb;
   margin: 2.5rem 0;
 }
-/* Reset prose styles inside not-prose components */
-.article-prose .not-prose * {
-  border-bottom: none;
-  padding-bottom: 0;
-}
+/* Reset ONLY layout/border prose styles inside not-prose — never touch color */
 .article-prose .not-prose h2,
 .article-prose .not-prose h3,
 .article-prose .not-prose h4 {
-  color: unset;
   border-bottom: none;
+  padding-bottom: 0;
   margin-top: 0;
+  margin-bottom: 0;
+  font-size: unset;
+  letter-spacing: unset;
 }
 .article-prose .not-prose p {
-  color: unset;
   margin-bottom: 0;
+  line-height: unset;
 }
 .article-prose .not-prose a {
-  color: unset;
   border-bottom: none;
 }
 
