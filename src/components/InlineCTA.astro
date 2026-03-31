@@ -11,7 +11,5 @@ const { titulo, descricao, botao, href = '#newsletter' } = Astro.props;
 <div class="not-prose bg-gray-50 border border-gray-200 rounded-xl p-6 my-8 text-center">
   {titulo && <p class="text-[11px] font-semibold text-brand-500 uppercase tracking-[0.12em] mb-1">{titulo}</p>}
   <p class="text-[15px] text-gray-700 font-medium mb-4">{descricao}</p>
-  <a href={href} class="inline-flex items-center gap-2 bg-brand-600 text-white text-[14px] font-semibold px-6 py-2.5 rounded-md hover:bg-brand-700 transition-colors">
-    {botao}
-  </a>
+  <a href={href} class="inline-flex items-center gap-2 bg-brand-600 text-white text-[14px] font-semibold px-6 py-2.5 rounded-md hover:bg-brand-700 transition-colors" set:html={botao} />
 </div>
