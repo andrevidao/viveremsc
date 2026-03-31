@@ -7,7 +7,7 @@ const slides = [
 ];
 ---
 
-<section class="relative h-[80vh] min-h-[560px] max-h-[800px] flex items-end overflow-hidden">
+<section class="relative h-[85vh] min-h-[600px] max-h-[860px] flex items-center overflow-hidden">
   <div id="hero-slider" class="absolute inset-0">
     {slides.map((slide, i) => (
       <div class:list={['hero-slide absolute inset-0 transition-opacity duration-[1.5s] ease-in-out', i === 0 ? 'opacity-100' : 'opacity-0']} data-slide={i}>
@@ -15,25 +15,25 @@ const slides = [
       </div>
     ))}
   </div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
 
-  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/5" />
-
-  <div class="relative max-w-[1200px] mx-auto px-6 pb-20 w-full">
-    <div class="max-w-[520px]">
-      <span class="inline-flex items-center gap-2 text-[11px] font-medium text-white/50 uppercase tracking-[0.2em] mb-4">
-        <span class="w-8 h-px bg-white/30" />
-        Atualizado 2026
-      </span>
+  <div class="relative max-w-[1200px] mx-auto px-6 w-full">
+    <div class="max-w-[540px]">
+      <p class="text-[13px] font-medium text-white/50 uppercase tracking-[0.15em] mb-3">Atualizado em 2026</p>
       <h1 class="text-[clamp(2rem,4.5vw,3.25rem)] font-extrabold text-white leading-[1.1] tracking-[-0.02em] mb-4">
-        Qualidade de vida e investimento em
+        Encontre o lugar ideal para viver e investir em
         <span class="text-brand-300">Santa Catarina</span>
       </h1>
-      <p class="text-[15px] text-white/60 leading-relaxed mb-7 max-w-[400px]">
-        Dados de mercado, análises e guias práticos para decisões de alto impacto.
+      <p class="text-[15px] text-white/60 leading-relaxed mb-8 max-w-[420px]">
+        Compare cidades, simule custo de vida e tome a melhor decisão com dados reais.
       </p>
-      <div class="flex gap-3">
-        <a href="#cidades" class="bg-white text-gray-900 text-[13px] font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition-colors">Explorar cidades</a>
-        <a href="#newsletter" class="bg-white/10 text-white text-[13px] font-medium px-6 py-3 rounded-md hover:bg-white/20 transition-colors border border-white/15">Guia gratuito</a>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="#calculadora" class="bg-white text-gray-900 text-[14px] font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition-colors text-center">
+          Simular custo de vida
+        </a>
+        <a href="#newsletter" class="bg-white/10 text-white text-[14px] font-medium px-6 py-3 rounded-md hover:bg-white/20 transition-colors border border-white/15 text-center">
+          Receber guia gratuito
+        </a>
       </div>
     </div>
   </div>
