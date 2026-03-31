@@ -1,0 +1,20 @@
+---
+interface Props {
+  nome: string;
+  tipo: string;
+  precoM2?: string;
+  destaque: string;
+  descricao: string;
+}
+const { nome, tipo, precoM2, destaque, descricao } = Astro.props;
+---
+
+<div class="not-prose bg-white border border-gray-200 rounded-xl p-5 my-2">
+  <div class="flex items-center justify-between mb-2">
+    <h4 class="text-[16px] font-bold text-gray-900">{nome}</h4>
+    <span class="text-[11px] font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-full uppercase tracking-[0.05em]">{tipo}</span>
+  </div>
+  {precoM2 && <p class="text-[13px] text-gray-400 mb-2">m² médio: <span class="font-semibold text-gray-700">{precoM2}</span></p>}
+  <p class="text-[14px] text-gray-600 leading-relaxed mb-2">{descricao}</p>
+  <p class="text-[13px] font-medium text-brand-600">{destaque}</p>
+</div>

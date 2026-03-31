@@ -1,0 +1,33 @@
+---
+interface Props {
+  perguntas: { q: string; a: string }[];
+}
+const { perguntas } = Astro.props;
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": perguntas.map(p => ({
+    "@type": "Question",
+    "name": p.q,
+    "acceptedAnswer": { "@type": "Answer", "text": p.a }
+  }))
+};
+---
+
+<div class="not-prose my-8">
+  <h3 class="text-[20px] font-bold text-gray-900 mb-4">Perguntas frequentes</h3>
+  <div class="space-y-3">
+    {perguntas.map(p => (
+      <details class="group border border-gray-200 rounded-lg">
+        <summary class="flex items-center justify-between px-5 py-4 cursor-pointer text-[15px] font-medium text-gray-800 hover:text-brand-600 transition-colors">
+          {p.q}
+          <svg class="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        </summary>
+        <div class="px-5 pb-4 text-[14px] text-gray-600 leading-relaxed">{p.a}</div>
+      </details>
+    ))}
+  </div>
+</div>
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
