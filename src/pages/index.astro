@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import HeroSlider from '../components/HeroSlider.astro';
 import PostCard from '../components/PostCard.astro';
 import CityCard from '../components/CityCard.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
@@ -20,61 +21,8 @@ const cidades = [
 
 <Base title="Morar e Investir em Santa Catarina" description="Inteligência de mercado e guias aprofundados para quem quer morar e investir em Santa Catarina com qualidade de vida.">
 
-  <!-- ==================== HERO ==================== -->
-  <section class="relative h-[85vh] min-h-[600px] max-h-[900px] flex items-end overflow-hidden">
-    <img
-      src="/images/hero/hero-sc.jpg"
-      alt="Vista aérea de Santa Catarina"
-      class="absolute inset-0 w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
-
-    <div class="relative max-w-[1200px] mx-auto px-6 pb-20 w-full">
-      <div class="max-w-[640px]">
-        <span class="inline-flex items-center gap-2 text-[11px] font-semibold text-white/60 uppercase tracking-[0.2em] mb-5">
-          <span class="w-8 h-px bg-white/40" />
-          Guia atualizado 2026
-        </span>
-
-        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-[1.08] tracking-tight mb-5">
-          Inteligência para<br>morar e investir em<br>
-          <span class="text-ocean-400">Santa Catarina</span>
-        </h1>
-
-        <p class="text-[17px] text-white/70 leading-relaxed mb-8 max-w-[480px]">
-          Dados de mercado, análises exclusivas e guias práticos para decisões de alto impacto.
-        </p>
-
-        <div class="flex flex-wrap gap-3">
-          <a href="#cidades" class="inline-flex items-center gap-2 bg-white text-gray-900 text-[13px] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
-            Explorar cidades
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
-          </a>
-          <a href="#newsletter" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-[13px] font-medium px-6 py-3 rounded-full hover:bg-white/20 transition-colors border border-white/10">
-            Guia gratuito
-          </a>
-        </div>
-      </div>
-
-      <!-- Stats floating -->
-      <div class="hidden lg:flex absolute right-6 bottom-20 flex-col gap-6">
-        <div class="text-right">
-          <span class="block text-3xl font-bold text-white">295+</span>
-          <span class="text-[11px] text-white/50 uppercase tracking-wider">Municípios</span>
-        </div>
-        <div class="w-px h-6 bg-white/20 self-end" />
-        <div class="text-right">
-          <span class="block text-3xl font-bold text-white">0.808</span>
-          <span class="text-[11px] text-white/50 uppercase tracking-wider">IDH médio</span>
-        </div>
-        <div class="w-px h-6 bg-white/20 self-end" />
-        <div class="text-right">
-          <span class="block text-3xl font-bold text-white">Top 3</span>
-          <span class="text-[11px] text-white/50 uppercase tracking-wider">Segurança BR</span>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ==================== HERO SLIDER ==================== -->
+  <HeroSlider />
 
   <!-- ==================== AD SLOT ==================== -->
   <div class="max-w-[1200px] mx-auto px-6 py-8">

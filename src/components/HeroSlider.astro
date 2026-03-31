@@ -1,0 +1,118 @@
+---
+const slides = [
+  { image: '/images/hero/slide-1.jpg', alt: 'Praia paradisíaca com águas turquesa' },
+  { image: '/images/hero/slide-2.jpg', alt: 'Pôr do sol em praia brasileira' },
+  { image: '/images/hero/slide-3.jpg', alt: 'Montanhas verdes com vista para o oceano' },
+  { image: '/images/hero/slide-4.jpg', alt: 'Água cristalina e natureza exuberante' },
+];
+---
+
+<section class="relative h-[90vh] min-h-[640px] max-h-[960px] flex items-end overflow-hidden">
+  <!-- Slides -->
+  <div id="hero-slider" class="absolute inset-0">
+    {slides.map((slide, i) => (
+      <div
+        class:list={['hero-slide absolute inset-0 transition-opacity duration-[1.5s] ease-in-out', i === 0 ? 'opacity-100' : 'opacity-0']}
+        data-slide={i}
+      >
+        <img
+          src={slide.image}
+          alt={slide.alt}
+          class="w-full h-full object-cover"
+          loading={i === 0 ? 'eager' : 'lazy'}
+        />
+      </div>
+    ))}
+  </div>
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/15" />
+  <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+
+  <!-- Content -->
+  <div class="relative max-w-[1200px] mx-auto px-6 pb-24 w-full">
+    <div class="max-w-[600px]">
+      <span class="inline-flex items-center gap-2 text-[11px] font-semibold text-white/50 uppercase tracking-[0.25em] mb-6">
+        <span class="w-10 h-px bg-white/30" />
+        Guia atualizado 2026
+      </span>
+
+      <h1 class="text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold text-white leading-[1.06] tracking-[-0.02em] mb-5">
+        Qualidade de vida e<br>investimento em<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 to-emerald-300">Santa Catarina</span>
+      </h1>
+
+      <p class="text-[16px] text-white/65 leading-relaxed mb-9 max-w-[440px]">
+        Dados de mercado, análises exclusivas e guias práticos para decisões de alto impacto.
+      </p>
+
+      <div class="flex flex-wrap gap-3">
+        <a href="#cidades" class="inline-flex items-center gap-2.5 bg-white text-gray-900 text-[13px] font-semibold px-7 py-3.5 rounded-full hover:bg-gray-100 transition-colors">
+          Explorar cidades
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        </a>
+        <a href="#newsletter" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-[13px] font-medium px-7 py-3.5 rounded-full hover:bg-white/20 transition-colors border border-white/15">
+          Guia gratuito
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats + Slider dots -->
+    <div class="hidden lg:flex absolute right-6 bottom-24 flex-col items-end gap-8">
+      <div class="flex flex-col gap-5 text-right">
+        <div>
+          <span class="block text-[28px] font-bold text-white tracking-tight">295+</span>
+          <span class="text-[10px] text-white/40 uppercase tracking-[0.15em] font-medium">Municípios</span>
+        </div>
+        <div class="w-8 h-px bg-white/15 self-end" />
+        <div>
+          <span class="block text-[28px] font-bold text-white tracking-tight">0.808</span>
+          <span class="text-[10px] text-white/40 uppercase tracking-[0.15em] font-medium">IDH médio</span>
+        </div>
+        <div class="w-8 h-px bg-white/15 self-end" />
+        <div>
+          <span class="block text-[28px] font-bold text-white tracking-tight">Top 3</span>
+          <span class="text-[10px] text-white/40 uppercase tracking-[0.15em] font-medium">Segurança BR</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-2.5">
+      {slides.map((_, i) => (
+        <button
+          class:list={['slider-dot w-2 h-2 rounded-full transition-all duration-500', i === 0 ? 'bg-white w-6' : 'bg-white/40']}
+          data-dot={i}
+          aria-label={`Slide ${i + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  let current = 0;
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.slider-dot');
+  const total = slides.length;
+
+  function goTo(index: number) {
+    slides[current].classList.replace('opacity-100', 'opacity-0');
+    dots[current].classList.remove('bg-white', 'w-6');
+    dots[current].classList.add('bg-white/40');
+
+    current = index;
+
+    slides[current].classList.replace('opacity-0', 'opacity-100');
+    dots[current].classList.add('bg-white', 'w-6');
+    dots[current].classList.remove('bg-white/40');
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => goTo(i));
+  });
+
+  setInterval(() => {
+    goTo((current + 1) % total);
+  }, 6000);
+</script>
