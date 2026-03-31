@@ -10,18 +10,20 @@ const {
 } = Astro.props;
 ---
 
-<section id="newsletter" class="relative bg-gray-950 overflow-hidden">
-  <!-- Subtle pattern -->
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;" />
+<section id="newsletter" class="relative overflow-hidden bg-gradient-to-br from-teal-700 via-teal-800 to-teal-900">
+  <!-- Decorative circles -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-cyan-400/10 rounded-full -mr-48 -mt-48" />
+  <div class="absolute bottom-0 left-0 w-64 h-64 bg-emerald-400/10 rounded-full -ml-32 -mb-32" />
+  <div class="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-teal-600/10 rounded-full -translate-x-1/2 -translate-y-1/2" />
 
   <div class="relative max-w-[1200px] mx-auto px-6 py-24">
     <div class="max-w-2xl mx-auto text-center">
-      <span class="inline-block text-[11px] font-semibold text-gray-400 uppercase tracking-[0.2em] mb-6 border border-gray-800 px-4 py-1.5 rounded-full">
+      <span class="inline-block text-[11px] font-semibold text-teal-300 uppercase tracking-[0.2em] mb-6 border border-teal-500/30 px-4 py-1.5 rounded-full">
         Guia Gratuito
       </span>
 
       <h2 class="text-3xl md:text-[42px] font-bold text-white leading-[1.15] tracking-tight mb-5">{title}</h2>
-      <p class="text-gray-400 text-[16px] leading-relaxed mb-10">{description}</p>
+      <p class="text-teal-200/70 text-[16px] leading-relaxed mb-10">{description}</p>
 
       <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" action="#" method="POST">
         <input
@@ -29,17 +31,17 @@ const {
           name="email"
           required
           placeholder="seu@email.com"
-          class="flex-1 px-5 py-3.5 rounded-full bg-white/5 border border-gray-800 text-white text-[14px] placeholder:text-gray-600 focus:outline-none focus:border-gray-600 transition-colors"
+          class="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-teal-400/20 text-white text-[14px] placeholder:text-teal-300/40 focus:outline-none focus:border-teal-300/60 focus:bg-white/15 transition-all"
         />
         <button
           type="submit"
-          class="bg-white text-gray-900 font-semibold px-7 py-3.5 rounded-full hover:bg-gray-200 transition-colors whitespace-nowrap text-[14px]"
+          class="bg-white text-teal-800 font-semibold px-7 py-3.5 rounded-full hover:bg-teal-50 transition-colors whitespace-nowrap text-[14px] shadow-lg shadow-black/10"
         >
           Receber grátis
         </button>
       </form>
 
-      <p class="text-[12px] text-gray-600 mt-5">Sem spam. Cancele quando quiser.</p>
+      <p class="text-[12px] text-teal-400/50 mt-5">Sem spam. Cancele quando quiser.</p>
     </div>
   </div>
 </section>

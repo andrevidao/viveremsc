@@ -1,18 +1,33 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ocean-50: #f0f9ff;
-  --color-ocean-100: #e0f2fe;
-  --color-ocean-200: #bae6fd;
-  --color-ocean-300: #7dd3fc;
-  --color-ocean-400: #38bdf8;
-  --color-ocean-500: #0ea5e9;
-  --color-ocean-600: #0284c7;
-  --color-ocean-700: #0369a1;
-  --color-ocean-800: #075985;
-  --color-ocean-900: #0c4a6e;
-  --color-ocean-950: #082f49;
+  /* Teal - cor principal da logo */
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-300: #5eead4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+  --color-teal-800: #115e59;
+  --color-teal-900: #134e4a;
+  --color-teal-950: #042f2e;
 
+  /* Ocean */
+  --color-ocean-50: #ecfeff;
+  --color-ocean-100: #cffafe;
+  --color-ocean-200: #a5f3fc;
+  --color-ocean-300: #67e8f9;
+  --color-ocean-400: #22d3ee;
+  --color-ocean-500: #06b6d4;
+  --color-ocean-600: #0891b2;
+  --color-ocean-700: #0e7490;
+  --color-ocean-800: #155e75;
+  --color-ocean-900: #164e63;
+  --color-ocean-950: #083344;
+
+  /* Nature green */
   --color-nature-50: #f0fdf4;
   --color-nature-100: #dcfce7;
   --color-nature-200: #bbf7d0;
@@ -22,6 +37,7 @@
   --color-nature-600: #16a34a;
   --color-nature-700: #15803d;
 
+  /* Sand / Warm */
   --color-sand-50: #fefce8;
   --color-sand-100: #fef9c3;
   --color-sand-200: #fef08a;
@@ -34,7 +50,6 @@
   --color-gold-600: #b8860b;
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -43,40 +58,21 @@ html {
 
 body {
   font-family: var(--font-sans);
-  color: #111827;
+  color: #1a2e35;
   background-color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Editorial typography */
-.prose h2 {
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-.prose h3 {
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  font-weight: 600;
-}
-.prose p {
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-}
-.prose table {
-  font-size: 0.875rem;
-}
-.prose th {
-  text-align: left;
-}
+.prose h2 { margin-top: 3rem; margin-bottom: 1rem; font-weight: 700; letter-spacing: -0.02em; }
+.prose h3 { margin-top: 2rem; margin-bottom: 0.75rem; font-weight: 600; }
+.prose p { margin-bottom: 1.5rem; line-height: 1.8; }
+.prose table { font-size: 0.875rem; }
+.prose th { text-align: left; }
 
-img {
-  transition: opacity 0.3s ease;
-}
+img { transition: opacity 0.3s ease; }
 
 ::selection {
-  background-color: #0ea5e9;
+  background-color: #14b8a6;
   color: white;
 }
