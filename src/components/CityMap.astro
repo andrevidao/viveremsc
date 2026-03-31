@@ -1,23 +1,23 @@
 ---
 interface Props {
   cidade: string;
-  estado?: string;
+  lat: number;
+  lon: number;
+  zoom?: number;
 }
-const { cidade, estado = 'SC' } = Astro.props;
-const query = encodeURIComponent(`${cidade}, ${estado}, Brasil`);
+const { cidade, lat, lon, zoom = 12 } = Astro.props;
 ---
 
 <div class="not-prose my-8">
   <h3 style="font-size: 18px; font-weight: 700; color: #111827; margin: 0 0 12px 0;">Onde fica {cidade}</h3>
   <div class="rounded-xl overflow-hidden border border-gray-200" style="height: 360px;">
     <iframe
-      src={`https://maps.google.com/maps?q=${query}&t=&z=12&ie=UTF8&iwloc=&output=embed`}
+      src={`https://www.openstreetmap.org/export/embed.html?bbox=${lon - 0.08}%2C${lat - 0.05}%2C${lon + 0.08}%2C${lat + 0.05}&layer=mapnik&marker=${lat}%2C${lon}`}
       width="100%"
       height="100%"
       style="border:0;"
-      allowfullscreen=""
       loading="lazy"
-      title={`Mapa de ${cidade}, ${estado}`}
+      title={`Mapa de ${cidade}, SC`}
     />
   </div>
 </div>
