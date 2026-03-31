@@ -1,0 +1,63 @@
+---
+interface Props {
+  cidade: string;
+  lat: number;
+  lon: number;
+  raio?: number;
+}
+const { cidade, lat, lon, raio = 8000 } = Astro.props;
+
+const categorias = [
+  { label: 'Praias', icon: '🏖️', tag: 'natural=beach' },
+  { label: 'Hospitais', icon: '🏥', tag: 'amenity=hospital' },
+  { label: 'Escolas', icon: '🎓', tag: 'amenity=school' },
+  { label: 'Shoppings', icon: '🛍️', tag: 'shop=mall' },
+  { label: 'Restaurantes', icon: '🍽️', tag: 'amenity=restaurant' },
+  { label: 'Supermercados', icon: '🛒', tag: 'shop=supermarket' },
+];
+
+async function fetchPOI(tag: string, limit: number = 6) {
+  const [key, value] = tag.split('=');
+  const query = `[out:json][timeout:10];(node["${key}"="${value}"](around:${raio},${lat},${lon});way["${key}"="${value}"](around:${raio},${lat},${lon}););out center ${limit};`;
+  try {
+    const res = await fetch(`https://overpass-api.de/api/interpreter?data=${encodeURIComponent(query)}`);
+    const data = await res.json();
+    return data.elements
+      .map((el: any) => el.tags?.name)
+      .filter((name: string | undefined) => name && name.length > 2)
+      .slice(0, limit);
+  } catch {
+    return [];
+  }
+}
+
+const results = await Promise.all(
+  categorias.map(async (cat) => ({
+    ...cat,
+    items: await fetchPOI(cat.tag),
+  }))
+);
+
+const hasData = results.some(r => r.items.length > 0);
+---
+
+{hasData && (
+  <div class="not-prose my-8">
+    <h3 style="font-size: 18px; font-weight: 700; color: #111827; margin: 0 0 16px 0;">O que você encontra em {cidade}</h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      {results.filter(r => r.items.length > 0).map(cat => (
+        <div class="border border-gray-200 rounded-lg p-4">
+          <p style="font-size: 13px; font-weight: 600; color: #111827; margin: 0 0 8px 0;">
+            <span style="margin-right: 6px;">{cat.icon}</span>{cat.label}
+          </p>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            {cat.items.map((name: string) => (
+              <li style="font-size: 13px; color: #6b7280; padding: 2px 0; border: none;">{name}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p style="font-size: 11px; color: #9ca3af; margin: 8px 0 0 0;">Dados: OpenStreetMap (contribuidores). Listagem parcial dos principais estabelecimentos mapeados.</p>
+  </div>
+)}
