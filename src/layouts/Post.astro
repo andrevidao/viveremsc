@@ -32,19 +32,34 @@ const formattedDate = pubDate.toLocaleDateString('pt-BR', {
 
 <Base title={title} description={description} ogImage={heroImage}>
 
-  <!-- Hero image full width -->
-  {heroImage && (
-    <div class="relative h-[50vh] min-h-[360px] max-h-[500px] bg-gray-900">
-      <img src={heroImage} alt={title} class="w-full h-full object-cover opacity-80" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+  <!-- Hero with title inside -->
+  {heroImage ? (
+    <div class="relative min-h-[420px] md:min-h-[480px] flex items-end bg-gray-900">
+      <img src={heroImage} alt={title} class="absolute inset-0 w-full h-full object-cover opacity-70" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+      <div class="relative max-w-[720px] mx-auto px-6 pb-10 w-full">
+        <div class="flex items-center gap-3 mb-3">
+          <a href={`/categorias/${categoria}`} class="text-[11px] font-semibold text-brand-300 uppercase tracking-[0.15em]">
+            {categoriaLabel[categoria]}
+          </a>
+          {cidade && (
+            <>
+              <span class="w-0.5 h-0.5 rounded-full bg-white/30" />
+              <span class="text-[11px] text-white/50 font-medium">{cidade}, SC</span>
+            </>
+          )}
+        </div>
+        <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-white leading-[1.15] tracking-tight mb-3">{title}</h1>
+        <div class="flex items-center gap-4 text-[13px] text-white/50">
+          <time>{formattedDate}</time>
+          {updatedDate && <span>Atualizado em {updatedDate.toLocaleDateString('pt-BR')}</span>}
+        </div>
+      </div>
     </div>
-  )}
-
-  <article class="max-w-[720px] mx-auto px-6">
-    <!-- Header -->
-    <header class:list={[heroImage ? '-mt-24 relative z-10' : 'pt-16', 'mb-12']}>
-      <div class="flex items-center gap-3 mb-4">
-        <a href={`/categorias/${categoria}`} class="text-[11px] font-semibold text-ocean-600 uppercase tracking-[0.15em] hover:text-ocean-700 transition-colors">
+  ) : (
+    <div class="max-w-[720px] mx-auto px-6 pt-16">
+      <div class="flex items-center gap-3 mb-3">
+        <a href={`/categorias/${categoria}`} class="text-[11px] font-semibold text-brand-600 uppercase tracking-[0.15em]">
           {categoriaLabel[categoria]}
         </a>
         {cidade && (
@@ -54,30 +69,21 @@ const formattedDate = pubDate.toLocaleDateString('pt-BR', {
           </>
         )}
       </div>
-
-      <h1 class="text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-white leading-[1.12] tracking-tight mb-5">
-        {!heroImage && <span class="text-gray-900">{title}</span>}
-        {heroImage && title}
-      </h1>
-
-      <div class="flex items-center gap-4 text-[13px]">
-        <time class:list={[heroImage ? 'text-white/60' : 'text-gray-400']}>{formattedDate}</time>
-        {updatedDate && (
-          <span class:list={[heroImage ? 'text-white/40' : 'text-gray-300']}>
-            Atualizado em {updatedDate.toLocaleDateString('pt-BR')}
-          </span>
-        )}
+      <h1 class="text-[clamp(1.75rem,4vw,2.5rem)] font-bold text-gray-900 leading-[1.15] tracking-tight mb-3">{title}</h1>
+      <div class="flex items-center gap-4 text-[13px] text-gray-400">
+        <time>{formattedDate}</time>
+        {updatedDate && <span>Atualizado em {updatedDate.toLocaleDateString('pt-BR')}</span>}
       </div>
-    </header>
+    </div>
+  )}
 
-    <!-- Ad Slot -->
+  <article class="max-w-[720px] mx-auto px-6 pt-10">
     <AdSlot slot="horizontal" class="mb-10" />
 
-    <!-- Content -->
     <div class="prose prose-lg max-w-none
       prose-headings:text-gray-900 prose-headings:font-bold prose-headings:tracking-tight
       prose-p:text-gray-600 prose-p:leading-[1.8]
-      prose-a:text-ocean-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
+      prose-a:text-brand-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
       prose-strong:text-gray-900 prose-strong:font-semibold
       prose-li:text-gray-600
       prose-table:text-[14px]
@@ -88,11 +94,9 @@ const formattedDate = pubDate.toLocaleDateString('pt-BR', {
       <slot />
     </div>
 
-    <!-- Ad Slot bottom -->
     <AdSlot slot="horizontal" class="mt-12 mb-6" />
   </article>
 
-  <!-- Newsletter -->
   <div class="mt-16">
     <NewsletterForm
       title="Gostou desta análise?"
