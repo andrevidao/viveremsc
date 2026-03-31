@@ -1,17 +1,92 @@
 ---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { getCollection } from 'astro:content';
 
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
+
+const categorias = [
+  { slug: 'cidades-para-morar', label: 'Cidades para Morar', icon: '🏙️', desc: 'As melhores cidades de SC para viver com qualidade' },
+  { slug: 'investimento-imobiliario', label: 'Investimento Imobiliário', icon: '📈', desc: 'Oportunidades reais no mercado imobiliário catarinense' },
+  { slug: 'custo-de-vida', label: 'Custo de Vida', icon: '💰', desc: 'Quanto custa morar nas principais cidades de SC' },
+  { slug: 'qualidade-de-vida', label: 'Qualidade de Vida', icon: '🌊', desc: 'Saúde, segurança, educação e lazer em SC' },
+  { slug: 'trabalho-e-negocios', label: 'Trabalho e Negócios', icon: '💼', desc: 'Mercado de trabalho e oportunidades empresariais' },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title="Morar e Investir em Santa Catarina" description="Guia completo para morar e investir em Santa Catarina. Cidades, custo de vida, mercado imobiliário e qualidade de vida para quem busca o melhor de SC.">
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-ocean-50 via-white to-nature-50 py-20">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+        Seu novo endereço em
+        <span class="text-ocean-600">Santa Catarina</span>
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+        Dados reais, análises de mercado e guias práticos para quem quer
+        <strong>morar e investir</strong> no estado com a melhor qualidade de vida do Brasil.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="#newsletter" class="bg-ocean-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-ocean-700 transition-colors">
+          Receber Guia Gratuito
+        </a>
+        <a href="/blog" class="border-2 border-ocean-600 text-ocean-600 font-bold px-8 py-3 rounded-lg hover:bg-ocean-50 transition-colors">
+          Ver Artigos
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ad Slot Topo -->
+  <div class="max-w-6xl mx-auto px-4 mt-8">
+    <AdSlot slot="horizontal" />
+  </div>
+
+  <!-- Categorias -->
+  <section class="max-w-6xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-slate-800 mb-8 text-center">Explore por Categoria</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {categorias.map(cat => (
+        <a
+          href={`/categorias/${cat.slug}`}
+          class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md hover:border-ocean-300 transition-all group"
+        >
+          <span class="text-2xl">{cat.icon}</span>
+          <h3 class="font-semibold text-slate-800 mt-2 group-hover:text-ocean-600 transition-colors">
+            {cat.label}
+          </h3>
+          <p class="text-sm text-slate-500 mt-1">{cat.desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Posts Recentes -->
+  {posts.length > 0 && (
+    <section class="max-w-6xl mx-auto px-4 pb-16">
+      <h2 class="text-2xl font-bold text-slate-800 mb-8">Artigos Recentes</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map(post => (
+          <PostCard
+            title={post.data.title}
+            description={post.data.description}
+            slug={post.id}
+            pubDate={post.data.pubDate}
+            categoria={post.data.categoria}
+            cidade={post.data.cidade}
+            heroImage={post.data.heroImage}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Newsletter -->
+  <NewsletterForm />
+
+</Base>

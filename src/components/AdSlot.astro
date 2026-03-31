@@ -1,0 +1,16 @@
+---
+interface Props {
+  slot?: string;
+  class?: string;
+}
+
+const { slot = 'horizontal', class: className = '' } = Astro.props;
+---
+
+<div class:list={['ad-slot bg-slate-100 border border-dashed border-slate-300 rounded-lg flex items-center justify-center text-slate-400 text-xs', className]}
+  data-ad-slot={slot}
+>
+  {slot === 'horizontal' && <div class="py-6 w-full text-center">Espaço para anúncio</div>}
+  {slot === 'sidebar' && <div class="py-16 w-full text-center">Anúncio</div>}
+  {slot === 'in-article' && <div class="py-4 w-full text-center">Anúncio no artigo</div>}
+</div>
