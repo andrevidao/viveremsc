@@ -8,8 +8,10 @@ interface Props {
 const { titulo, descricao, botao, href = '#newsletter' } = Astro.props;
 ---
 
-<div class="not-prose bg-gray-50 border border-gray-200 rounded-xl p-6 my-8 text-center">
-  {titulo && <p class="text-[11px] font-semibold text-brand-500 uppercase tracking-[0.12em] mb-1">{titulo}</p>}
-  <p class="text-[15px] text-gray-700 font-medium mb-4">{descricao}</p>
-  <a href={href} class="inline-flex items-center gap-2 bg-brand-600 !text-white text-[14px] font-semibold px-6 py-2.5 rounded-md hover:bg-brand-700 transition-colors no-underline border-none"><Fragment set:html={botao} /></a>
+<div class="not-prose bg-brand-600 rounded-xl p-6 md:p-8 my-8 flex flex-col md:flex-row items-center justify-between gap-4">
+  <div class="md:max-w-[65%]">
+    {titulo && <p style="color: rgba(255,255,255,0.5); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; margin: 0 0 4px 0;">{titulo}</p>}
+    <p style="color: white; font-size: 15px; font-weight: 500; margin: 0; line-height: 1.5;">{descricao}</p>
+  </div>
+  <a href={href} class="flex-shrink-0 bg-white text-brand-700 text-[14px] font-bold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg shadow-brand-800/20 no-underline border-none"><Fragment set:html={botao} /></a>
 </div>
