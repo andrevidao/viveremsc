@@ -32,61 +32,72 @@ const formattedDate = pubDate.toLocaleDateString('pt-BR', {
 
 <Base title={title} description={description} ogImage={heroImage}>
 
-  <article class="max-w-4xl mx-auto px-4 py-12">
-    <!-- Breadcrumb -->
-    <nav class="text-sm text-slate-500 mb-6">
-      <a href="/" class="hover:text-ocean-600">Início</a>
-      <span class="mx-1">/</span>
-      <a href={`/categorias/${categoria}`} class="hover:text-ocean-600">{categoriaLabel[categoria]}</a>
-      <span class="mx-1">/</span>
-      <span class="text-slate-700">{title}</span>
-    </nav>
+  <!-- Hero image full width -->
+  {heroImage && (
+    <div class="relative h-[50vh] min-h-[360px] max-h-[500px] bg-gray-900">
+      <img src={heroImage} alt={title} class="w-full h-full object-cover opacity-80" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+    </div>
+  )}
 
+  <article class="max-w-[720px] mx-auto px-6">
     <!-- Header -->
-    <header class="mb-8">
+    <header class:list={[heroImage ? '-mt-24 relative z-10' : 'pt-16', 'mb-12']}>
       <div class="flex items-center gap-3 mb-4">
-        <span class="text-xs font-semibold text-ocean-600 bg-ocean-50 px-3 py-1 rounded-full">
+        <a href={`/categorias/${categoria}`} class="text-[11px] font-semibold text-ocean-600 uppercase tracking-[0.15em] hover:text-ocean-700 transition-colors">
           {categoriaLabel[categoria]}
-        </span>
-        {cidade && <span class="text-xs text-slate-500">{cidade}, SC</span>}
+        </a>
+        {cidade && (
+          <>
+            <span class="w-0.5 h-0.5 rounded-full bg-gray-300" />
+            <span class="text-[11px] text-gray-400 font-medium">{cidade}, SC</span>
+          </>
+        )}
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">{title}</h1>
-      <p class="text-lg text-slate-600 mb-4">{description}</p>
-      <div class="flex items-center gap-4 text-sm text-slate-400">
-        <time>{formattedDate}</time>
-        {updatedDate && <span>Atualizado em {updatedDate.toLocaleDateString('pt-BR')}</span>}
+
+      <h1 class="text-[clamp(1.75rem,4vw,2.75rem)] font-bold text-white leading-[1.12] tracking-tight mb-5">
+        {!heroImage && <span class="text-gray-900">{title}</span>}
+        {heroImage && title}
+      </h1>
+
+      <div class="flex items-center gap-4 text-[13px]">
+        <time class:list={[heroImage ? 'text-white/60' : 'text-gray-400']}>{formattedDate}</time>
+        {updatedDate && (
+          <span class:list={[heroImage ? 'text-white/40' : 'text-gray-300']}>
+            Atualizado em {updatedDate.toLocaleDateString('pt-BR')}
+          </span>
+        )}
       </div>
     </header>
 
-    {heroImage && (
-      <img src={heroImage} alt={title} class="w-full rounded-xl mb-8 object-cover max-h-96" />
-    )}
+    <!-- Ad Slot -->
+    <AdSlot slot="horizontal" class="mb-10" />
 
-    <!-- Ad Slot Topo do Post -->
-    <AdSlot slot="horizontal" class="mb-8" />
-
-    <!-- Conteúdo MDX -->
+    <!-- Content -->
     <div class="prose prose-lg max-w-none
-      prose-headings:text-slate-800 prose-headings:font-bold
-      prose-p:text-slate-700 prose-p:leading-relaxed
+      prose-headings:text-gray-900 prose-headings:font-bold prose-headings:tracking-tight
+      prose-p:text-gray-600 prose-p:leading-[1.8]
       prose-a:text-ocean-600 prose-a:font-medium prose-a:no-underline hover:prose-a:underline
-      prose-strong:text-slate-800
-      prose-li:text-slate-700
-      prose-table:text-sm
-      prose-th:bg-ocean-50 prose-th:text-slate-800
-      prose-td:border-slate-200
+      prose-strong:text-gray-900 prose-strong:font-semibold
+      prose-li:text-gray-600
+      prose-table:text-[14px]
+      prose-th:bg-gray-50 prose-th:text-gray-900 prose-th:font-semibold prose-th:py-3
+      prose-td:py-3 prose-td:border-gray-100
+      prose-hr:border-gray-100
     ">
       <slot />
     </div>
 
-    <!-- Ad Slot Final do Post -->
-    <AdSlot slot="horizontal" class="mt-8" />
+    <!-- Ad Slot bottom -->
+    <AdSlot slot="horizontal" class="mt-12 mb-6" />
   </article>
 
   <!-- Newsletter -->
-  <NewsletterForm
-    title="Gostou deste artigo?"
-    description="Receba análises exclusivas sobre morar e investir em Santa Catarina direto no seu e-mail."
-  />
+  <div class="mt-16">
+    <NewsletterForm
+      title="Gostou desta análise?"
+      description="Receba guias exclusivos sobre morar e investir em Santa Catarina. Direto no seu e-mail, sem spam."
+    />
+  </div>
 
 </Base>

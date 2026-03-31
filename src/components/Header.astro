@@ -1,81 +1,66 @@
 ---
 const navLinks = [
-  { href: '/', label: 'Início' },
   { href: '/blog', label: 'Artigos' },
   { href: '/categorias/cidades-para-morar', label: 'Cidades' },
   { href: '/categorias/investimento-imobiliario', label: 'Investimento' },
   { href: '/categorias/custo-de-vida', label: 'Custo de Vida' },
+  { href: '/categorias/qualidade-de-vida', label: 'Qualidade de Vida' },
 ];
 ---
 
-<header class="bg-white/95 backdrop-blur-md border-b border-warm-200/60 sticky top-0 z-50">
-  <!-- Top bar -->
-  <div class="bg-ocean-900 text-ocean-100 text-xs py-1.5 hidden md:block">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-      <span>Seu guia completo para morar e investir em Santa Catarina</span>
-      <div class="flex items-center gap-4">
-        <a href="#newsletter" class="hover:text-white transition-colors">Newsletter</a>
-        <span class="text-ocean-700">|</span>
-        <a href="/sobre" class="hover:text-white transition-colors">Sobre</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Main nav -->
-  <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3 group">
-      <img src="/images/logo-viveremsc.jpg" alt="Viver em SC" class="h-11 w-auto rounded-lg shadow-sm" />
-      <div class="hidden sm:block">
-        <span class="text-lg font-bold text-warm-900 tracking-tight">Viver em SC</span>
-        <span class="block text-[11px] text-warm-500 -mt-0.5 font-medium tracking-wide uppercase">Morar &middot; Investir &middot; Viver</span>
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100">
+  <nav class="max-w-[1200px] mx-auto px-6 h-[72px] flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-3">
+      <img src="/images/logo-viveremsc.jpg" alt="Viver em SC" class="h-10 w-auto rounded-md" />
+      <div class="hidden sm:flex flex-col">
+        <span class="text-[15px] font-bold text-gray-900 tracking-tight leading-none">VIVER EM SC</span>
+        <span class="text-[10px] text-gray-400 font-medium tracking-[0.2em] uppercase mt-0.5">Morar &middot; Investir &middot; Viver</span>
       </div>
     </a>
 
-    <ul class="hidden lg:flex items-center gap-1">
+    <!-- Desktop Nav -->
+    <ul class="hidden lg:flex items-center gap-0.5">
       {navLinks.map(link => (
         <li>
-          <a
-            href={link.href}
-            class="px-3 py-2 text-sm font-medium text-warm-600 hover:text-ocean-600 hover:bg-ocean-50 rounded-lg transition-all"
-          >
+          <a href={link.href} class="px-3.5 py-2 text-[13px] font-medium text-gray-500 hover:text-gray-900 transition-colors">
             {link.label}
           </a>
         </li>
       ))}
     </ul>
 
+    <!-- CTA -->
     <div class="flex items-center gap-3">
       <a
         href="#newsletter"
-        class="hidden md:inline-flex items-center gap-2 bg-ocean-600 text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-ocean-700 shadow-sm shadow-ocean-600/20 transition-all hover:shadow-md hover:shadow-ocean-600/30"
+        class="hidden md:inline-flex items-center gap-2 bg-gray-900 text-white text-[13px] font-medium px-5 py-2.5 rounded-full hover:bg-gray-800 transition-colors"
       >
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-        Guia Gratuito
+        Receber Guia
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
       </a>
 
-      <button id="menu-toggle" class="lg:hidden p-2 text-warm-600 hover:bg-warm-100 rounded-lg transition-colors" aria-label="Abrir menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      <button id="menu-toggle" class="lg:hidden p-2 text-gray-500 hover:text-gray-900 transition-colors" aria-label="Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
     </div>
   </nav>
 
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-warm-100 bg-white">
-    <ul class="flex flex-col p-4 gap-1">
+  <!-- Mobile -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white">
+    <ul class="flex flex-col py-3 px-6">
       {navLinks.map(link => (
         <li>
-          <a href={link.href} class="block px-4 py-2.5 text-sm font-medium text-warm-600 hover:text-ocean-600 hover:bg-ocean-50 rounded-lg transition-all">
+          <a href={link.href} class="block py-3 text-[14px] font-medium text-gray-600 hover:text-gray-900 border-b border-gray-50 transition-colors">
             {link.label}
           </a>
         </li>
       ))}
-      <li class="mt-2">
-        <a href="#newsletter" class="block text-center bg-ocean-600 text-white font-semibold px-4 py-2.5 rounded-lg">
-          Guia Gratuito
+      <li class="pt-4 pb-2">
+        <a href="#newsletter" class="block text-center bg-gray-900 text-white font-medium py-3 rounded-full text-[14px]">
+          Receber Guia Gratuito
         </a>
       </li>
     </ul>

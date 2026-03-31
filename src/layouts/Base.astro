@@ -30,14 +30,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta property="og:locale" content="pt_BR" />
 
-    <!-- Fonts -->
+    <!-- Inter font - display swap for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <title>{title} | Viver em SC</title>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col bg-white">
     <Header />
     <main class="flex-1">
       <slot />

@@ -11,101 +11,90 @@ const posts = (await getCollection('blog'))
   .slice(0, 6);
 
 const cidades = [
-  { name: 'Balneário Camboriú', slug: 'morar-em-balneario-camboriu', image: 'https://images.unsplash.com/photo-1626543535839-6744c7d1a1e7?w=600&h=400&fit=crop', idh: 0.845, precoM2: '14.5k', populacao: '156k', destaque: 'Mais valorizada' },
-  { name: 'Florianópolis', slug: 'morar-em-florianopolis', image: 'https://images.unsplash.com/photo-1598301257942-e6bde1d2149b?w=600&h=400&fit=crop', idh: 0.847, precoM2: '11.2k', populacao: '516k', destaque: 'Capital' },
-  { name: 'Joinville', slug: 'morar-em-joinville', image: 'https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop', idh: 0.809, precoM2: '7.8k', populacao: '616k', destaque: 'Polo industrial' },
-  { name: 'Itapema', slug: 'morar-em-itapema', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop', idh: 0.796, precoM2: '12.1k', populacao: '73k' },
-];
-
-const stats = [
-  { value: '295+', label: 'Municípios em SC', icon: '🏙️' },
-  { value: '0.808', label: 'IDH médio do estado', icon: '📊' },
-  { value: 'Top 3', label: 'Segurança no Brasil', icon: '🛡️' },
-  { value: '85%', label: 'Satisfação dos moradores', icon: '😊' },
-];
-
-const categorias = [
-  { slug: 'cidades-para-morar', label: 'Cidades para Morar', desc: 'Guias completos das melhores cidades de SC', icon: '🏠', count: 12 },
-  { slug: 'investimento-imobiliario', label: 'Investimento Imobiliário', desc: 'Oportunidades reais no mercado catarinense', icon: '📈', count: 8 },
-  { slug: 'custo-de-vida', label: 'Custo de Vida', desc: 'Quanto custa morar nas principais cidades', icon: '💰', count: 10 },
-  { slug: 'qualidade-de-vida', label: 'Qualidade de Vida', desc: 'Saúde, segurança, educação e lazer', icon: '🌊', count: 6 },
-  { slug: 'trabalho-e-negocios', label: 'Trabalho e Negócios', desc: 'Mercado de trabalho e empreendedorismo', icon: '💼', count: 5 },
+  { name: 'Balneário Camboriú', slug: 'morar-em-balneario-camboriu', image: '/images/cidades/balneario-camboriu.jpg', idh: 0.845, precoM2: '14.5k', populacao: '156k', destaque: 'Mais valorizada' },
+  { name: 'Florianópolis', slug: 'morar-em-florianopolis', image: '/images/cidades/florianopolis.jpg', idh: 0.847, precoM2: '11.2k', populacao: '516k', destaque: 'Capital' },
+  { name: 'Joinville', slug: 'morar-em-joinville', image: '/images/cidades/joinville.jpg', idh: 0.809, precoM2: '7.8k', populacao: '616k' },
+  { name: 'Itapema', slug: 'morar-em-itapema', image: '/images/cidades/itapema.jpg', idh: 0.796, precoM2: '12.1k', populacao: '73k' },
 ];
 ---
 
-<Base title="Morar e Investir em Santa Catarina" description="Guia completo para morar e investir em Santa Catarina. Cidades, custo de vida, mercado imobiliário e qualidade de vida para quem busca o melhor de SC.">
+<Base title="Morar e Investir em Santa Catarina" description="Inteligência de mercado e guias aprofundados para quem quer morar e investir em Santa Catarina com qualidade de vida.">
 
   <!-- ==================== HERO ==================== -->
-  <section class="relative overflow-hidden bg-ocean-950 min-h-[540px] flex items-center">
-    <!-- Background image -->
-    <div class="absolute inset-0">
-      <img
-        src="https://images.unsplash.com/photo-1598301257942-e6bde1d2149b?w=1600&h=900&fit=crop"
-        alt="Santa Catarina"
-        class="w-full h-full object-cover opacity-30"
-      />
-      <div class="absolute inset-0 bg-gradient-to-r from-ocean-950 via-ocean-950/80 to-ocean-950/50" />
-    </div>
+  <section class="relative h-[85vh] min-h-[600px] max-h-[900px] flex items-end overflow-hidden">
+    <img
+      src="/images/hero/hero-sc.jpg"
+      alt="Vista aérea de Santa Catarina"
+      class="absolute inset-0 w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
 
-    <div class="relative max-w-7xl mx-auto px-6 py-24">
-      <div class="max-w-2xl">
-        <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-ocean-200 text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6 border border-white/10">
-          <span class="w-1.5 h-1.5 bg-nature-400 rounded-full animate-pulse" />
-          Atualizado em 2026
+    <div class="relative max-w-[1200px] mx-auto px-6 pb-20 w-full">
+      <div class="max-w-[640px]">
+        <span class="inline-flex items-center gap-2 text-[11px] font-semibold text-white/60 uppercase tracking-[0.2em] mb-5">
+          <span class="w-8 h-px bg-white/40" />
+          Guia atualizado 2026
         </span>
 
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-          Seu futuro em
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-ocean-300 to-nature-300">Santa Catarina</span>
-          começa aqui
+        <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white leading-[1.08] tracking-tight mb-5">
+          Inteligência para<br>morar e investir em<br>
+          <span class="text-ocean-400">Santa Catarina</span>
         </h1>
 
-        <p class="text-lg text-ocean-200 leading-relaxed mb-8 max-w-xl">
-          Dados reais de mercado, análises exclusivas e guias práticos para quem quer
-          <strong class="text-white">morar e investir</strong> no estado com a melhor qualidade de vida do Brasil.
+        <p class="text-[17px] text-white/70 leading-relaxed mb-8 max-w-[480px]">
+          Dados de mercado, análises exclusivas e guias práticos para decisões de alto impacto.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="#cidades" class="inline-flex items-center justify-center gap-2 bg-white text-ocean-900 font-bold px-7 py-3.5 rounded-xl hover:bg-ocean-50 transition-all shadow-lg text-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            Explorar Cidades
+        <div class="flex flex-wrap gap-3">
+          <a href="#cidades" class="inline-flex items-center gap-2 bg-white text-gray-900 text-[13px] font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition-colors">
+            Explorar cidades
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
           </a>
-          <a href="#newsletter" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-white/20 transition-all border border-white/20 text-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            Guia Gratuito
+          <a href="#newsletter" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white text-[13px] font-medium px-6 py-3 rounded-full hover:bg-white/20 transition-colors border border-white/10">
+            Guia gratuito
           </a>
+        </div>
+      </div>
+
+      <!-- Stats floating -->
+      <div class="hidden lg:flex absolute right-6 bottom-20 flex-col gap-6">
+        <div class="text-right">
+          <span class="block text-3xl font-bold text-white">295+</span>
+          <span class="text-[11px] text-white/50 uppercase tracking-wider">Municípios</span>
+        </div>
+        <div class="w-px h-6 bg-white/20 self-end" />
+        <div class="text-right">
+          <span class="block text-3xl font-bold text-white">0.808</span>
+          <span class="text-[11px] text-white/50 uppercase tracking-wider">IDH médio</span>
+        </div>
+        <div class="w-px h-6 bg-white/20 self-end" />
+        <div class="text-right">
+          <span class="block text-3xl font-bold text-white">Top 3</span>
+          <span class="text-[11px] text-white/50 uppercase tracking-wider">Segurança BR</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==================== STATS BAR ==================== -->
-  <section class="relative -mt-8 z-10 max-w-6xl mx-auto px-6">
-    <div class="bg-white rounded-2xl shadow-xl border border-warm-200/50 grid grid-cols-2 md:grid-cols-4 divide-x divide-warm-100">
-      {stats.map(stat => (
-        <div class="text-center py-6 px-4">
-          <span class="text-2xl mb-1 block">{stat.icon}</span>
-          <span class="block text-2xl md:text-3xl font-bold text-warm-900">{stat.value}</span>
-          <span class="block text-xs text-warm-500 font-medium mt-1">{stat.label}</span>
-        </div>
-      ))}
-    </div>
-  </section>
-
   <!-- ==================== AD SLOT ==================== -->
-  <div class="max-w-6xl mx-auto px-6 mt-10">
+  <div class="max-w-[1200px] mx-auto px-6 py-8">
     <AdSlot slot="horizontal" />
   </div>
 
   <!-- ==================== CIDADES ==================== -->
-  <section id="cidades" class="max-w-7xl mx-auto px-6 py-20">
-    <div class="text-center mb-12">
-      <span class="text-xs font-bold text-ocean-600 uppercase tracking-widest">Explore o estado</span>
-      <h2 class="text-3xl md:text-4xl font-bold text-warm-900 mt-2">Cidades em Destaque</h2>
-      <p class="text-warm-500 mt-3 max-w-lg mx-auto">Dados atualizados de IDH, preço do m² e população para ajudar na sua decisão.</p>
+  <section id="cidades" class="max-w-[1200px] mx-auto px-6 pb-24">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <span class="text-[11px] font-semibold text-ocean-600 uppercase tracking-[0.2em]">Explore</span>
+        <h2 class="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight mt-1">Cidades em destaque</h2>
+      </div>
+      <a href="/categorias/cidades-para-morar" class="hidden sm:inline-flex items-center gap-1.5 text-[13px] font-medium text-gray-500 hover:text-gray-900 transition-colors">
+        Ver todas
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+      </a>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {cidades.map(city => (
         <CityCard
           name={city.name}
@@ -120,60 +109,89 @@ const categorias = [
     </div>
   </section>
 
-  <!-- ==================== CATEGORIAS ==================== -->
-  <section class="bg-white border-y border-warm-200/50">
-    <div class="max-w-7xl mx-auto px-6 py-20">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold text-ocean-600 uppercase tracking-widest">Conteúdo especializado</span>
-        <h2 class="text-3xl md:text-4xl font-bold text-warm-900 mt-2">Navegue por Categoria</h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {categorias.map(cat => (
-          <a
-            href={`/categorias/${cat.slug}`}
-            class="group flex items-start gap-4 p-5 rounded-2xl border border-warm-200/60 hover:border-ocean-200 hover:bg-ocean-50/30 transition-all duration-200"
-          >
-            <span class="text-3xl flex-shrink-0 mt-0.5">{cat.icon}</span>
+  <!-- ==================== FEATURED CONTENT ==================== -->
+  <section class="border-t border-gray-100">
+    <div class="max-w-[1200px] mx-auto px-6 py-24">
+      <div class="grid lg:grid-cols-12 gap-16">
+        <!-- Main content -->
+        <div class="lg:col-span-7">
+          <div class="flex items-end justify-between mb-10">
             <div>
-              <h3 class="font-bold text-warm-900 group-hover:text-ocean-600 transition-colors">{cat.label}</h3>
-              <p class="text-sm text-warm-500 mt-1">{cat.desc}</p>
+              <span class="text-[11px] font-semibold text-ocean-600 uppercase tracking-[0.2em]">Publicações</span>
+              <h2 class="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight mt-1">Artigos recentes</h2>
             </div>
-          </a>
-        ))}
+          </div>
+
+          <div class="space-y-10">
+            {posts.map(post => (
+              <PostCard
+                title={post.data.title}
+                description={post.data.description}
+                slug={post.id}
+                pubDate={post.data.pubDate}
+                categoria={post.data.categoria}
+                cidade={post.data.cidade}
+                heroImage={post.data.heroImage}
+              />
+            ))}
+          </div>
+
+          {posts.length > 0 && (
+            <div class="mt-10">
+              <a href="/blog" class="inline-flex items-center gap-2 text-[13px] font-medium text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 px-5 py-2.5 rounded-full hover:border-gray-400">
+                Ver todos os artigos
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              </a>
+            </div>
+          )}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:col-span-5">
+          <!-- Categorias -->
+          <div class="mb-12">
+            <h3 class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.2em] mb-6">Categorias</h3>
+            <div class="space-y-1">
+              <a href="/categorias/cidades-para-morar" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+                <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Cidades para Morar</span>
+                <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="/categorias/investimento-imobiliario" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+                <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Investimento Imobiliário</span>
+                <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="/categorias/custo-de-vida" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+                <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Custo de Vida</span>
+                <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="/categorias/qualidade-de-vida" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+                <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Qualidade de Vida</span>
+                <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
+              </a>
+              <a href="/categorias/trabalho-e-negocios" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+                <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Trabalho e Negócios</span>
+                <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Ad Slot Sidebar -->
+          <AdSlot slot="sidebar" class="mb-12" />
+
+          <!-- Highlight box -->
+          <div class="bg-gray-50 rounded-2xl p-7">
+            <span class="text-[11px] font-semibold text-ocean-600 uppercase tracking-[0.15em]">Em destaque</span>
+            <h3 class="text-[18px] font-bold text-gray-900 mt-2 mb-3 tracking-tight leading-snug">Por que Santa Catarina é o estado que mais cresce no Brasil?</h3>
+            <p class="text-[14px] text-gray-500 leading-relaxed mb-4">IDH elevado, segurança acima da média e mercado imobiliário em expansão atraem investidores e famílias de todo o país.</p>
+            <a href="/blog" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-ocean-600 hover:text-ocean-700 transition-colors">
+              Saiba mais
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
-
-  <!-- ==================== POSTS RECENTES ==================== -->
-  {posts.length > 0 && (
-    <section class="max-w-7xl mx-auto px-6 py-20">
-      <div class="flex items-end justify-between mb-10">
-        <div>
-          <span class="text-xs font-bold text-ocean-600 uppercase tracking-widest">Blog</span>
-          <h2 class="text-3xl md:text-4xl font-bold text-warm-900 mt-2">Artigos Recentes</h2>
-        </div>
-        <a href="/blog" class="hidden sm:inline-flex items-center gap-1 text-sm font-semibold text-ocean-600 hover:text-ocean-700 transition-colors">
-          Ver todos
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" /></svg>
-        </a>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map(post => (
-          <PostCard
-            title={post.data.title}
-            description={post.data.description}
-            slug={post.id}
-            pubDate={post.data.pubDate}
-            categoria={post.data.categoria}
-            cidade={post.data.cidade}
-            heroImage={post.data.heroImage}
-          />
-        ))}
-      </div>
-    </section>
-  )}
 
   <!-- ==================== NEWSLETTER ==================== -->
   <NewsletterForm />
