@@ -13,6 +13,31 @@ const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Viver em SC",
+      "url": "https://viveremsc.com.br",
+      "description": "Inteligência de mercado e guias aprofundados para quem quer morar e investir em Santa Catarina.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://viveremsc.com.br/blog?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
+    {
+      "@type": "Organization",
+      "name": "Viver em SC",
+      "url": "https://viveremsc.com.br",
+      "logo": "https://viveremsc.com.br/images/logo-viveremsc.jpg",
+      "description": "Guias e dados de mercado para morar e investir em Santa Catarina.",
+      "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "contato@viveremsc.com.br" },
+    },
+  ],
+};
+
 const cidades = [
   { name: 'Balneário Camboriú', slug: 'morar-em-balneario-camboriu', image: '/images/cidades/balneario-camboriu.jpg', idh: 0.845, precoM2: '14.5k', populacao: '156k', destaque: 'Mais valorizada' },
   { name: 'Florianópolis', slug: 'morar-em-florianopolis', image: '/images/cidades/florianopolis.jpg', idh: 0.847, precoM2: '11.2k', populacao: '516k', destaque: 'Capital' },
@@ -21,7 +46,7 @@ const cidades = [
 ];
 ---
 
-<Base title="Morar e Investir em Santa Catarina" description="Compare cidades, simule custo de vida e tome a melhor decisão para morar e investir em Santa Catarina com dados reais.">
+<Base title="Morar e Investir em Santa Catarina" description="Compare cidades, simule custo de vida e tome a melhor decisão para morar e investir em Santa Catarina com dados reais." schema={homeSchema}>
 
   <!--
     FUNIL DA HOME:
