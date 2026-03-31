@@ -72,35 +72,37 @@ const cidades = [
   </div>
 
   <!-- ==================== CIDADES ==================== -->
-  <section id="cidades" class="max-w-[1200px] mx-auto px-6 pb-24">
-    <div class="flex items-end justify-between mb-10">
-      <div>
-        <span class="text-[11px] font-semibold text-ocean-600 uppercase tracking-[0.2em]">Explore</span>
-        <h2 class="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight mt-1">Cidades em destaque</h2>
+  <section id="cidades" class="bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-[1200px] mx-auto px-6 py-24">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <span class="text-[11px] font-semibold text-ocean-600 uppercase tracking-[0.2em]">Explore</span>
+          <h2 class="text-[32px] md:text-[40px] font-bold text-gray-900 tracking-tight mt-1">Cidades em destaque</h2>
+        </div>
+        <a href="/categorias/cidades-para-morar" class="hidden sm:inline-flex items-center gap-1.5 text-[13px] font-medium text-gray-500 hover:text-gray-900 transition-colors">
+          Ver todas
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        </a>
       </div>
-      <a href="/categorias/cidades-para-morar" class="hidden sm:inline-flex items-center gap-1.5 text-[13px] font-medium text-gray-500 hover:text-gray-900 transition-colors">
-        Ver todas
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-      </a>
-    </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {cidades.map(city => (
-        <CityCard
-          name={city.name}
-          slug={city.slug}
-          image={city.image}
-          idh={city.idh}
-          precoM2={city.precoM2}
-          populacao={city.populacao}
-          destaque={city.destaque}
-        />
-      ))}
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {cidades.map(city => (
+          <CityCard
+            name={city.name}
+            slug={city.slug}
+            image={city.image}
+            idh={city.idh}
+            precoM2={city.precoM2}
+            populacao={city.populacao}
+            destaque={city.destaque}
+          />
+        ))}
+      </div>
     </div>
   </section>
 
   <!-- ==================== FEATURED CONTENT ==================== -->
-  <section class="border-t border-gray-100">
+  <section class="bg-white">
     <div class="max-w-[1200px] mx-auto px-6 py-24">
       <div class="grid lg:grid-cols-12 gap-16">
         <!-- Main content -->
@@ -139,26 +141,26 @@ const cidades = [
         <!-- Sidebar -->
         <aside class="lg:col-span-5">
           <!-- Categorias -->
-          <div class="mb-12">
-            <h3 class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.2em] mb-6">Categorias</h3>
-            <div class="space-y-1">
-              <a href="/categorias/cidades-para-morar" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+          <div class="bg-gray-50 rounded-2xl p-6 mb-8">
+            <h3 class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.2em] mb-5">Categorias</h3>
+            <div class="space-y-0.5">
+              <a href="/categorias/cidades-para-morar" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white group transition-colors">
                 <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Cidades para Morar</span>
                 <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
               </a>
-              <a href="/categorias/investimento-imobiliario" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+              <a href="/categorias/investimento-imobiliario" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white group transition-colors">
                 <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Investimento Imobiliário</span>
                 <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
               </a>
-              <a href="/categorias/custo-de-vida" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+              <a href="/categorias/custo-de-vida" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white group transition-colors">
                 <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Custo de Vida</span>
                 <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
               </a>
-              <a href="/categorias/qualidade-de-vida" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+              <a href="/categorias/qualidade-de-vida" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white group transition-colors">
                 <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Qualidade de Vida</span>
                 <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
               </a>
-              <a href="/categorias/trabalho-e-negocios" class="flex items-center justify-between py-3.5 border-b border-gray-100 group">
+              <a href="/categorias/trabalho-e-negocios" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-white group transition-colors">
                 <span class="text-[14px] font-medium text-gray-700 group-hover:text-gray-900 transition-colors">Trabalho e Negócios</span>
                 <svg class="w-4 h-4 text-gray-300 group-hover:text-gray-900 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
               </a>
@@ -166,14 +168,14 @@ const cidades = [
           </div>
 
           <!-- Ad Slot Sidebar -->
-          <AdSlot slot="sidebar" class="mb-12" />
+          <AdSlot slot="sidebar" class="mb-8" />
 
           <!-- Highlight box -->
-          <div class="bg-gray-50 rounded-2xl p-7">
-            <span class="text-[11px] font-semibold text-ocean-600 uppercase tracking-[0.15em]">Em destaque</span>
-            <h3 class="text-[18px] font-bold text-gray-900 mt-2 mb-3 tracking-tight leading-snug">Por que Santa Catarina é o estado que mais cresce no Brasil?</h3>
-            <p class="text-[14px] text-gray-500 leading-relaxed mb-4">IDH elevado, segurança acima da média e mercado imobiliário em expansão atraem investidores e famílias de todo o país.</p>
-            <a href="/blog" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-ocean-600 hover:text-ocean-700 transition-colors">
+          <div class="bg-ocean-950 rounded-2xl p-7 text-white">
+            <span class="text-[11px] font-semibold text-ocean-300 uppercase tracking-[0.15em]">Em destaque</span>
+            <h3 class="text-[18px] font-bold text-white mt-2 mb-3 tracking-tight leading-snug">Por que Santa Catarina é o estado que mais cresce no Brasil?</h3>
+            <p class="text-[14px] text-ocean-200 leading-relaxed mb-4">IDH elevado, segurança acima da média e mercado imobiliário em expansão atraem investidores e famílias de todo o país.</p>
+            <a href="/blog" class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full transition-colors">
               Saiba mais
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </a>
