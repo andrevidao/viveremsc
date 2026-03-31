@@ -144,5 +144,15 @@ body {
   margin: 2.5rem 0;
 }
 
+/* Isolate components inside article-prose */
+.article-prose .not-prose,
+.article-prose .not-prose * {
+  all: revert;
+}
+.article-prose .invest-box,
+.article-prose .invest-box * {
+  border: none;
+}
+
 img { transition: opacity 0.3s ease; }
 ::selection { background-color: #4a9a8e; color: white; }
