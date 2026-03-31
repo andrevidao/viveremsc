@@ -19,50 +19,26 @@ const categoriaLabel: Record<string, string> = {
   'trabalho-e-negocios': 'Negócios',
 };
 
-const formattedDate = pubDate.toLocaleDateString('pt-BR', {
-  day: '2-digit',
-  month: 'short',
-  year: 'numeric',
-});
+const formattedDate = pubDate.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' });
 ---
 
 <article class="group">
   {heroImage && (
-    <a href={`/blog/${slug}`} class="block relative aspect-[16/10] rounded-xl overflow-hidden mb-4 bg-gray-100">
-      <img
-        src={heroImage}
-        alt={title}
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-        loading="lazy"
-      />
+    <a href={`/blog/${slug}`} class="block aspect-[16/10] rounded-lg overflow-hidden mb-3 bg-gray-100">
+      <img src={heroImage} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
     </a>
   )}
-
-  <div class="flex items-center gap-3 mb-2.5">
-    <span class="text-[11px] font-semibold text-teal-600 uppercase tracking-[0.1em]">
-      {categoriaLabel[categoria] || categoria}
-    </span>
-    {cidade && (
-      <>
-        <span class="w-0.5 h-0.5 rounded-full bg-gray-300" />
-        <span class="text-[11px] text-gray-400 font-medium">{cidade}</span>
-      </>
-    )}
+  <div class="flex items-center gap-2 mb-2">
+    <span class="text-[11px] font-semibold text-brand-600 uppercase tracking-[0.08em]">{categoriaLabel[categoria] || categoria}</span>
+    {cidade && (<><span class="w-0.5 h-0.5 rounded-full bg-gray-300" /><span class="text-[11px] text-gray-400">{cidade}</span></>)}
   </div>
-
   <a href={`/blog/${slug}`}>
-    <h3 class="text-[17px] font-bold text-gray-900 group-hover:text-teal-600 transition-colors leading-snug mb-2 tracking-tight">
-      {title}
-    </h3>
+    <h3 class="text-[16px] font-bold text-gray-900 group-hover:text-brand-600 transition-colors leading-snug mb-1.5">{title}</h3>
   </a>
-
-  <p class="text-[14px] text-gray-500 leading-relaxed mb-3 line-clamp-2">{description}</p>
-
-  <div class="flex items-center gap-3">
-    <time class="text-[12px] text-gray-400">{formattedDate}</time>
+  <p class="text-[13px] text-gray-500 leading-relaxed mb-2 line-clamp-2">{description}</p>
+  <div class="flex items-center gap-2 text-[12px] text-gray-400">
+    <time>{formattedDate}</time>
     <span class="w-0.5 h-0.5 rounded-full bg-gray-300" />
-    <a href={`/blog/${slug}`} class="text-[12px] font-medium text-teal-600 hover:text-teal-700 transition-colors">
-      Ler artigo
-    </a>
+    <a href={`/blog/${slug}`} class="font-medium text-brand-600 hover:text-brand-700">Ler artigo</a>
   </div>
 </article>

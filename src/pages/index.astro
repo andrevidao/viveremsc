@@ -21,175 +21,103 @@ const cidades = [
 
 <Base title="Morar e Investir em Santa Catarina" description="Inteligência de mercado e guias aprofundados para quem quer morar e investir em Santa Catarina com qualidade de vida.">
 
-  <!-- ==================== HERO SLIDER ==================== -->
+  <!-- HERO -->
   <HeroSlider />
 
-  <!-- ==================== STATS BAR ==================== -->
-  <div class="relative z-10 -mt-12 max-w-[960px] mx-auto px-6">
-    <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl shadow-teal-900/8 border border-white/80 grid grid-cols-2 md:grid-cols-4">
-      <div class="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-teal-100/40">
-        <span class="w-10 h-10 rounded-xl bg-teal-50 flex items-center justify-center text-teal-600 flex-shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-        </span>
-        <div>
-          <span class="block text-[20px] font-bold text-teal-900 leading-none">295+</span>
-          <span class="block text-[11px] text-teal-600/60 font-medium mt-0.5">Municípios</span>
-        </div>
+  <!-- STATS -->
+  <div class="relative z-10 -mt-10 max-w-[900px] mx-auto px-6">
+    <div class="bg-white rounded-xl shadow-lg border border-gray-100 grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
+      <div class="px-5 py-4 text-center">
+        <span class="block text-[22px] font-bold text-gray-900">295+</span>
+        <span class="block text-[11px] text-gray-400 mt-0.5">Municípios</span>
       </div>
-      <div class="flex items-center gap-3 px-6 py-5 border-b md:border-b-0 md:border-r border-teal-100/40">
-        <span class="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 flex-shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-        </span>
-        <div>
-          <span class="block text-[20px] font-bold text-teal-900 leading-none">0.808</span>
-          <span class="block text-[11px] text-teal-600/60 font-medium mt-0.5">IDH médio</span>
-        </div>
+      <div class="px-5 py-4 text-center">
+        <span class="block text-[22px] font-bold text-gray-900">0.808</span>
+        <span class="block text-[11px] text-gray-400 mt-0.5">IDH médio</span>
       </div>
-      <div class="flex items-center gap-3 px-6 py-5 md:border-r border-teal-100/40">
-        <span class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-600 flex-shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-        </span>
-        <div>
-          <span class="block text-[20px] font-bold text-teal-900 leading-none">Top 3</span>
-          <span class="block text-[11px] text-teal-600/60 font-medium mt-0.5">Segurança BR</span>
-        </div>
+      <div class="px-5 py-4 text-center">
+        <span class="block text-[22px] font-bold text-gray-900">Top 3</span>
+        <span class="block text-[11px] text-gray-400 mt-0.5">Segurança BR</span>
       </div>
-      <div class="flex items-center gap-3 px-6 py-5">
-        <span class="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 flex-shrink-0">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-        </span>
-        <div>
-          <span class="block text-[20px] font-bold text-teal-900 leading-none">85%</span>
-          <span class="block text-[11px] text-teal-600/60 font-medium mt-0.5">Satisfação</span>
-        </div>
+      <div class="px-5 py-4 text-center">
+        <span class="block text-[22px] font-bold text-gray-900">85%</span>
+        <span class="block text-[11px] text-gray-400 mt-0.5">Satisfação</span>
       </div>
     </div>
   </div>
 
-  <!-- ==================== AD SLOT ==================== -->
-  <div class="max-w-[1200px] mx-auto px-6 pt-10 pb-4">
+  <!-- AD -->
+  <div class="max-w-[1200px] mx-auto px-6 pt-8 pb-2">
     <AdSlot slot="horizontal" />
   </div>
 
-  <!-- ==================== CIDADES ==================== -->
-  <section id="cidades" class="bg-gradient-to-b from-teal-50/60 via-teal-50/40 to-cyan-50/30">
-    <div class="max-w-[1200px] mx-auto px-6 py-24">
-      <div class="flex items-end justify-between mb-10">
+  <!-- CIDADES -->
+  <section id="cidades" class="bg-brand-50 border-y border-brand-100/60">
+    <div class="max-w-[1200px] mx-auto px-6 py-20">
+      <div class="flex items-end justify-between mb-8">
         <div>
-          <span class="text-[11px] font-semibold text-teal-600 uppercase tracking-[0.2em]">Explore</span>
-          <h2 class="text-[32px] md:text-[40px] font-bold text-teal-950 tracking-tight mt-1">Cidades em destaque</h2>
+          <span class="text-[11px] font-semibold text-brand-500 uppercase tracking-[0.15em]">Explore</span>
+          <h2 class="text-[28px] md:text-[34px] font-bold text-gray-900 tracking-tight mt-1">Cidades em destaque</h2>
         </div>
-        <a href="/categorias/cidades-para-morar" class="hidden sm:inline-flex items-center gap-1.5 text-[13px] font-medium text-teal-600 hover:text-teal-800 transition-colors">
-          Ver todas
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        <a href="/categorias/cidades-para-morar" class="hidden sm:inline-flex items-center gap-1 text-[13px] font-medium text-brand-600 hover:text-brand-700">
+          Ver todas <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
         </a>
       </div>
-
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {cidades.map(city => (
-          <CityCard
-            name={city.name}
-            slug={city.slug}
-            image={city.image}
-            idh={city.idh}
-            precoM2={city.precoM2}
-            populacao={city.populacao}
-            destaque={city.destaque}
-          />
+          <CityCard name={city.name} slug={city.slug} image={city.image} idh={city.idh} precoM2={city.precoM2} populacao={city.populacao} destaque={city.destaque} />
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ==================== FEATURED CONTENT ==================== -->
-  <section class="bg-gradient-to-b from-amber-50/40 via-orange-50/20 to-white">
-    <div class="max-w-[1200px] mx-auto px-6 py-24">
-      <div class="grid lg:grid-cols-12 gap-16">
-        <!-- Main content -->
+  <!-- ARTIGOS -->
+  <section class="bg-white">
+    <div class="max-w-[1200px] mx-auto px-6 py-20">
+      <div class="grid lg:grid-cols-12 gap-14">
         <div class="lg:col-span-7">
-          <div class="flex items-end justify-between mb-10">
-            <div>
-              <span class="text-[11px] font-semibold text-teal-600 uppercase tracking-[0.2em]">Publicações</span>
-              <h2 class="text-[32px] md:text-[40px] font-bold text-teal-950 tracking-tight mt-1">Artigos recentes</h2>
-            </div>
-          </div>
-
-          <div class="space-y-10">
+          <span class="text-[11px] font-semibold text-brand-500 uppercase tracking-[0.15em]">Publicações</span>
+          <h2 class="text-[28px] md:text-[34px] font-bold text-gray-900 tracking-tight mt-1 mb-8">Artigos recentes</h2>
+          <div class="space-y-8">
             {posts.map(post => (
-              <PostCard
-                title={post.data.title}
-                description={post.data.description}
-                slug={post.id}
-                pubDate={post.data.pubDate}
-                categoria={post.data.categoria}
-                cidade={post.data.cidade}
-                heroImage={post.data.heroImage}
-              />
+              <PostCard title={post.data.title} description={post.data.description} slug={post.id} pubDate={post.data.pubDate} categoria={post.data.categoria} cidade={post.data.cidade} heroImage={post.data.heroImage} />
             ))}
           </div>
-
           {posts.length > 0 && (
-            <div class="mt-10">
-              <a href="/blog" class="inline-flex items-center gap-2 text-[13px] font-medium text-teal-700 hover:text-teal-900 transition-colors border border-teal-200 px-5 py-2.5 rounded-full hover:border-teal-400 hover:bg-teal-50">
-                Ver todos os artigos
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <div class="mt-8">
+              <a href="/blog" class="inline-flex items-center gap-1.5 text-[13px] font-medium text-brand-600 hover:text-brand-700">
+                Ver todos os artigos <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
               </a>
             </div>
           )}
         </div>
 
-        <!-- Sidebar -->
-        <aside class="lg:col-span-5">
-          <!-- Categorias -->
-          <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-teal-100/50 shadow-sm">
-            <h3 class="text-[11px] font-semibold text-teal-500 uppercase tracking-[0.2em] mb-5">Categorias</h3>
-            <div class="space-y-0.5">
-              <a href="/categorias/cidades-para-morar" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-teal-50/60 group transition-colors">
-                <span class="text-[14px] font-medium text-teal-800 group-hover:text-teal-900 transition-colors">Cidades para Morar</span>
-                <svg class="w-4 h-4 text-teal-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
-              </a>
-              <a href="/categorias/investimento-imobiliario" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-teal-50/60 group transition-colors">
-                <span class="text-[14px] font-medium text-teal-800 group-hover:text-teal-900 transition-colors">Investimento Imobiliário</span>
-                <svg class="w-4 h-4 text-teal-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
-              </a>
-              <a href="/categorias/custo-de-vida" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-teal-50/60 group transition-colors">
-                <span class="text-[14px] font-medium text-teal-800 group-hover:text-teal-900 transition-colors">Custo de Vida</span>
-                <svg class="w-4 h-4 text-teal-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
-              </a>
-              <a href="/categorias/qualidade-de-vida" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-teal-50/60 group transition-colors">
-                <span class="text-[14px] font-medium text-teal-800 group-hover:text-teal-900 transition-colors">Qualidade de Vida</span>
-                <svg class="w-4 h-4 text-teal-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
-              </a>
-              <a href="/categorias/trabalho-e-negocios" class="flex items-center justify-between py-3 px-3 rounded-xl hover:bg-teal-50/60 group transition-colors">
-                <span class="text-[14px] font-medium text-teal-800 group-hover:text-teal-900 transition-colors">Trabalho e Negócios</span>
-                <svg class="w-4 h-4 text-teal-300 group-hover:text-teal-600 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg>
-              </a>
-            </div>
+        <aside class="lg:col-span-5 space-y-6">
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.15em] mb-4">Categorias</h3>
+            <a href="/categorias/cidades-para-morar" class="flex items-center justify-between py-2.5 text-[14px] text-gray-700 hover:text-brand-600 border-b border-gray-100">Cidades para Morar <svg class="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg></a>
+            <a href="/categorias/investimento-imobiliario" class="flex items-center justify-between py-2.5 text-[14px] text-gray-700 hover:text-brand-600 border-b border-gray-100">Investimento Imobiliário <svg class="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg></a>
+            <a href="/categorias/custo-de-vida" class="flex items-center justify-between py-2.5 text-[14px] text-gray-700 hover:text-brand-600 border-b border-gray-100">Custo de Vida <svg class="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg></a>
+            <a href="/categorias/qualidade-de-vida" class="flex items-center justify-between py-2.5 text-[14px] text-gray-700 hover:text-brand-600 border-b border-gray-100">Qualidade de Vida <svg class="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg></a>
+            <a href="/categorias/trabalho-e-negocios" class="flex items-center justify-between py-2.5 text-[14px] text-gray-700 hover:text-brand-600">Trabalho e Negócios <svg class="w-3.5 h-3.5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" /></svg></a>
           </div>
 
-          <!-- Ad Slot Sidebar -->
-          <AdSlot slot="sidebar" class="mb-8" />
+          <AdSlot slot="sidebar" />
 
-          <!-- Highlight box -->
-          <div class="relative overflow-hidden rounded-2xl p-7 bg-gradient-to-br from-teal-600 to-teal-800">
-            <div class="absolute top-0 right-0 w-32 h-32 bg-teal-400/20 rounded-full -mr-10 -mt-10" />
-            <div class="absolute bottom-0 left-0 w-24 h-24 bg-cyan-400/15 rounded-full -ml-8 -mb-8" />
-            <div class="relative">
-              <span class="text-[11px] font-semibold text-teal-200 uppercase tracking-[0.15em]">Em destaque</span>
-              <h3 class="text-[18px] font-bold text-white mt-2 mb-3 tracking-tight leading-snug">Por que Santa Catarina é o estado que mais cresce no Brasil?</h3>
-              <p class="text-[14px] text-teal-100/80 leading-relaxed mb-5">IDH elevado, segurança acima da média e mercado imobiliário em expansão atraem investidores e famílias de todo o país.</p>
-              <a href="/blog" class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-teal-900 bg-white hover:bg-teal-50 px-5 py-2.5 rounded-full transition-colors">
-                Saiba mais
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </a>
-            </div>
+          <div class="bg-brand-600 rounded-xl p-6">
+            <span class="text-[11px] font-semibold text-brand-200 uppercase tracking-[0.12em]">Em destaque</span>
+            <h3 class="text-[17px] font-bold text-white mt-1.5 mb-2 leading-snug">Por que SC é o estado que mais cresce no Brasil?</h3>
+            <p class="text-[13px] text-brand-100/70 leading-relaxed mb-4">IDH elevado, segurança e mercado imobiliário em expansão atraem investidores de todo o país.</p>
+            <a href="/blog" class="inline-flex items-center gap-1.5 text-[13px] font-semibold text-brand-600 bg-white px-4 py-2 rounded-md hover:bg-brand-50">
+              Saiba mais <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </a>
           </div>
         </aside>
       </div>
     </div>
   </section>
 
-  <!-- ==================== NEWSLETTER ==================== -->
+  <!-- NEWSLETTER -->
   <NewsletterForm />
 
 </Base>
