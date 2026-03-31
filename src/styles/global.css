@@ -143,6 +143,17 @@ body {
   border-top: 1px solid #e5e7eb;
   margin: 2.5rem 0;
 }
+/* Override prose styles inside not-prose components */
+.article-prose .not-prose h3,
+.article-prose .not-prose h4,
+.article-prose .not-prose p,
+.article-prose .not-prose span,
+.article-prose .not-prose a {
+  border: none !important;
+  padding-bottom: 0 !important;
+  margin: revert !important;
+  color: inherit !important;
+}
 
 img { transition: opacity 0.3s ease; }
 ::selection { background-color: #4a9a8e; color: white; }
